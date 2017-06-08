@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2001-2017 Opta Sportsdata Ltd. All rights reserved. -->
+
+<!-- PRODUCTION HEADER
+     produced on:        valde-jobq-a01.nexus.opta.net
+     production time:    20170304T000423,182Z
+     production module:  Opta::Feed::XML::Soccer::F7
+-->
+<SoccerFeed TimeStamp="20170304T000420+0000">
+  <SoccerDocument Type="Result" uID="f909342">
+    <Competition uID="c834">
+      <Name>Algarve Cup</Name>
+      <Round>
+        <Name>Round</Name>
+        <Pool>3</Pool>
+        <RoundNumber>1</RoundNumber>
+      </Round>
+      <Stat Type="season_id">2016</Stat>
+      <Stat Type="season_name">Season 2016/2017</Stat>
+      <Stat Type="symid">IG_AL</Stat>
+      <Stat Type="matchday">2</Stat>
+    </Competition>
+    <MatchData>
+      <MatchInfo MatchType="Regular" Period="FullTime" TimeStamp="20170303T202423+0000" Weather="Clear">
+        <Attendance>70</Attendance>
+        <Date>20170303T183000+0000</Date>
+        <Result Type="NormalResult" />
+      </MatchInfo>
+      <MatchOfficial uID="o42262">
+        <OfficialData>
+          <OfficialRef Type="Main" />
+        </OfficialData>
+        <OfficialName>
+          <First>Anastasia</First>
+          <Last>Pustovoitova</Last>
+        </OfficialName>
+      </MatchOfficial>
+      <AssistantOfficials>
+        <AssistantOfficial FirstName="Ekaterina" LastName="Kurockina" Type="Lineman 1" uID="o49730" />
+        <AssistantOfficial FirstName="Ekaterina" LastName="Marinova" Type="Lineman 2" uID="o49731" />
+        <AssistantOfficial FirstName="Jonesia" LastName="Kabakama" Type="Fourth official" uID="o49694" />
+      </AssistantOfficials>
+      <Stat Type="match_time">94</Stat>
+      <Stat Type="first_half_start">20170303T183505+0000</Stat>
+      <Stat Type="first_half_time">45</Stat>
+      <Stat Type="first_half_stop">20170303T192005+0000</Stat>
+      <Stat Type="second_half_start">20170303T193606+0000</Stat>
+      <Stat Type="second_half_time">49</Stat>
+      <Stat Type="second_half_stop">20170303T202423+0000</Stat>
+      <TeamData Score="0" Side="Home" TeamRef="t6325">
+        <Booking Card="Yellow" CardType="Yellow" EventID="1873448030" EventNumber="1381" Period="FirstHalf" PlayerRef="p208736" Reason="Foul" Time="38" TimeStamp="20170303T191220+0000" uID="b6325-1" />
+        <Booking Card="Yellow" CardType="Yellow" EventID="456766706" EventNumber="2782" Period="SecondHalf" PlayerRef="p208730" Reason="Foul" Time="78" TimeStamp="20170303T200845+0000" uID="b6325-2" />
+        <PlayerLineUp>
+          <MatchPlayer PlayerRef="p210627" Position="Goalkeeper" ShirtNumber="1" Status="Start" />
+          <MatchPlayer PlayerRef="p208729" Position="Defender" ShirtNumber="2" Status="Start" />
+          <MatchPlayer PlayerRef="p249126" Position="Defender" ShirtNumber="19" Status="Start" />
+          <MatchPlayer PlayerRef="p208738" Position="Defender" ShirtNumber="14" Status="Start" />
+          <MatchPlayer PlayerRef="p229856" Position="Defender" ShirtNumber="4" Status="Start" />
+          <MatchPlayer PlayerRef="p229855" Position="Midfielder" ShirtNumber="10" Status="Start" />
+          <MatchPlayer Captain="1" PlayerRef="p208736" Position="Midfielder" ShirtNumber="23" Status="Start" />
+          <MatchPlayer PlayerRef="p208737" Position="Midfielder" ShirtNumber="20" Status="Start" />
+          <MatchPlayer PlayerRef="p249130" Position="Midfielder" ShirtNumber="9" Status="Start" />
+          <MatchPlayer PlayerRef="p184902" Position="Striker" ShirtNumber="12" Status="Start" />
+          <MatchPlayer PlayerRef="p208730" Position="Striker" ShirtNumber="11" Status="Start" />
+          <MatchPlayer PlayerRef="p210624" Position="Substitute" ShirtNumber="21" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p208735" Position="Substitute" ShirtNumber="8" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p249136" Position="Substitute" ShirtNumber="24" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p98050" Position="Substitute" ShirtNumber="6" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p220426" Position="Substitute" ShirtNumber="16" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p208731" Position="Substitute" ShirtNumber="5" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p220571" Position="Substitute" ShirtNumber="18" Status="Sub" SubPosition="Goalkeeper" />
+          <MatchPlayer PlayerRef="p249131" Position="Substitute" ShirtNumber="7" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p249132" Position="Substitute" ShirtNumber="3" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p249135" Position="Substitute" ShirtNumber="22" Status="Sub" SubPosition="Goalkeeper" />
+          <MatchPlayer PlayerRef="p210621" Position="Substitute" ShirtNumber="13" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p208739" Position="Substitute" ShirtNumber="17" Status="Sub" SubPosition="Midfielder" />
+        </PlayerLineUp>
+        <Substitution EventID="942450756" EventNumber="2623" Period="2" Reason="Injury" SubOff="p249126" SubOn="p208731" SubstitutePosition="2" Time="62" TimeStamp="20170303T195209+0000" uID="s6325-1" />
+        <Substitution EventID="1685319634" EventNumber="2734" Period="2" Reason="Tactical" SubOff="p249130" SubOn="p210621" SubstitutePosition="4" Time="73" TimeStamp="20170303T200334+0000" uID="s6325-2" />
+        <Substitution EventID="2147412240" EventNumber="2845" Period="2" Reason="Tactical" SubOff="p229855" SubOn="p210624" SubstitutePosition="3" Time="84" TimeStamp="20170303T201421+0000" uID="s6325-3" />
+      </TeamData>
+      <TeamData Score="0" Side="Away" TeamRef="t6246">
+        <PlayerLineUp>
+          <MatchPlayer PlayerRef="p179956" Position="Goalkeeper" ShirtNumber="12" Status="Start" />
+          <MatchPlayer PlayerRef="p179966" Position="Defender" ShirtNumber="2" Status="Start" />
+          <MatchPlayer PlayerRef="p210486" Position="Defender" ShirtNumber="6" Status="Start" />
+          <MatchPlayer PlayerRef="p193533" Position="Defender" ShirtNumber="4" Status="Start" />
+          <MatchPlayer PlayerRef="p164906" Position="Defender" ShirtNumber="15" Status="Start" />
+          <MatchPlayer Captain="1" PlayerRef="p96722" Position="Midfielder" ShirtNumber="17" Status="Start" />
+          <MatchPlayer PlayerRef="p179976" Position="Midfielder" ShirtNumber="18" Status="Start" />
+          <MatchPlayer PlayerRef="p98838" Position="Midfielder" ShirtNumber="7" Status="Start" />
+          <MatchPlayer PlayerRef="p96725" Position="Midfielder" ShirtNumber="9" Status="Start" />
+          <MatchPlayer PlayerRef="p96728" Position="Striker" ShirtNumber="8" Status="Start" />
+          <MatchPlayer PlayerRef="p164908" Position="Striker" ShirtNumber="22" Status="Start" />
+          <MatchPlayer PlayerRef="p96703" Position="Substitute" ShirtNumber="1" Status="Sub" SubPosition="Goalkeeper" />
+          <MatchPlayer PlayerRef="p193534" Position="Substitute" ShirtNumber="14" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p209849" Position="Substitute" ShirtNumber="23" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p179971" Position="Substitute" ShirtNumber="19" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p191721" Position="Substitute" ShirtNumber="10" Status="Sub" SubPosition="Midfielder" />
+          <MatchPlayer PlayerRef="p179974" Position="Substitute" ShirtNumber="20" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p191720" Position="Substitute" ShirtNumber="11" Status="Sub" SubPosition="Forward" />
+          <MatchPlayer PlayerRef="p186575" Position="Substitute" ShirtNumber="16" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p97384" Position="Substitute" ShirtNumber="3" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p191682" Position="Substitute" ShirtNumber="21" Status="Sub" SubPosition="Goalkeeper" />
+          <MatchPlayer PlayerRef="p96719" Position="Substitute" ShirtNumber="5" Status="Sub" SubPosition="Defender" />
+          <MatchPlayer PlayerRef="p249080" Position="Substitute" ShirtNumber="13" Status="Sub" SubPosition="Defender" />
+        </PlayerLineUp>
+        <Substitution EventID="317155019" EventNumber="2456" Period="2" Reason="Tactical" SubOff="p96725" SubOn="p209849" SubstitutePosition="3" Time="45" TimeStamp="20170303T193556+0000" uID="s6246-1" />
+        <Substitution EventID="1269902320" EventNumber="2457" Period="2" Reason="Tactical" SubOff="p179976" SubOn="p193534" SubstitutePosition="3" Time="45" TimeStamp="20170303T193556+0000" uID="s6246-2" />
+        <Substitution EventID="995155146" EventNumber="2618" Period="2" Reason="Injury" SubOff="p209849" SubOn="p191721" SubstitutePosition="3" Time="61" TimeStamp="20170303T195135+0000" uID="s6246-3" />
+        <Substitution EventID="1575345649" EventNumber="2699" Period="2" Reason="Tactical" SubOff="p96728" SubOn="p191720" SubstitutePosition="4" Time="69" TimeStamp="20170303T195947+0000" uID="s6246-4" />
+        <Substitution EventID="110026428" EventNumber="26910" Period="2" Reason="Tactical" SubOff="p179966" SubOn="p186575" SubstitutePosition="2" Time="69" TimeStamp="20170303T195957+0000" uID="s6246-5" />
+        <Substitution EventID="1365028815" EventNumber="28411" Period="2" Reason="Tactical" SubOff="p98838" SubOn="p179971" SubstitutePosition="4" Time="84" TimeStamp="20170303T201427+0000" uID="s6246-6" />
+      </TeamData>
+    </MatchData>
+    <Team uID="t6325">
+      <Country>China PR</Country>
+      <Name>China PR Women</Name>
+      <Player Position="Goalkeeper" uID="p210627">
+        <PersonName>
+          <First>Lina</First>
+          <Known>Zhao Lina</Known>
+          <Last>Zhao</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p208729">
+        <PersonName>
+          <First>Shanshan</First>
+          <Known>Liu Shanshan</Known>
+          <Last>Liu</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p249126">
+        <PersonName>
+          <First>Yan</First>
+          <Known>Wang Yan</Known>
+          <Last>Wang</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p208738">
+        <PersonName>
+          <First>Rong</First>
+          <Known>Zhao Rong</Known>
+          <Last>Zhao</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p229856">
+        <PersonName>
+          <First>Chen</First>
+          <Known>Gao Chen</Known>
+          <Last>Gao</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p229855">
+        <PersonName>
+          <First>Li</First>
+          <Known>Yang Li</Known>
+          <Last>Yang</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p208736">
+        <PersonName>
+          <First>Guixin</First>
+          <Known>Ren Guixin</Known>
+          <Last>Ren</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p208737">
+        <PersonName>
+          <First>Rui</First>
+          <Known>Zhang Rui</Known>
+          <Last>Zhang</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p249130">
+        <PersonName>
+          <First>Jiali</First>
+          <Known>Tang Jiali</Known>
+          <Last>Tang</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Striker" uID="p184902">
+        <PersonName>
+          <First>Shuang</First>
+          <Known>Wang Shuang</Known>
+          <Last>Wang</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Striker" uID="p208730">
+        <PersonName>
+          <First>Shanshan</First>
+          <Known>Wang Shanshan</Known>
+          <Last>Wang</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p210624">
+        <PersonName>
+          <First>Jiahui</First>
+          <Known>Lou Jiahui</Known>
+          <Last>Lou</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p208735">
+        <PersonName>
+          <First>Ruyin</First>
+          <Known>Tan Ruyin</Known>
+          <Last>Tan</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p249136">
+        <PersonName>
+          <First>Wei</First>
+          <Known>Yao Wei</Known>
+          <Last>Yao</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p98050">
+        <PersonName>
+          <First>Dongna</First>
+          <Known>Li Dongna</Known>
+          <Last>Li</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p220426">
+        <PersonName>
+          <First>Man</First>
+          <Known>Yang Man</Known>
+          <Last>Yang</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p208731">
+        <PersonName>
+          <First>Haiyan</First>
+          <Known>Wu Haiyan</Known>
+          <Last>Wu</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p220571">
+        <PersonName>
+          <First>Xiaolin</First>
+          <Known>Bi Xiaolin</Known>
+          <Last>Bi</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p249131">
+        <PersonName>
+          <First>Jinjin</First>
+          <Known>Yan Jinjin</Known>
+          <Last>Yan</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p249132">
+        <PersonName>
+          <First>Yingshuang</First>
+          <Known>Ma Yingshuang</Known>
+          <Last>Ma</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p249135">
+        <PersonName>
+          <First>Shimeng</First>
+          <Known>Peng Shimeng</Known>
+          <Last>Peng</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p210621">
+        <PersonName>
+          <First>Ying</First>
+          <Known>Li Ying</Known>
+          <Last>Li</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p208739">
+        <PersonName>
+          <First>Peng</First>
+          <Known>Han Peng</Known>
+          <Last>Han</Last>
+        </PersonName>
+      </Player>
+      <TeamOfficial Type="Manager" uID="man40630">
+        <PersonName>
+          <First>Bruno</First>
+          <Last>Bini</Last>
+        </PersonName>
+      </TeamOfficial>
+    </Team>
+    <Team uID="t6246">
+      <Country>Sweden</Country>
+      <Name>Sweden Women</Name>
+      <Player Position="Goalkeeper" uID="p179956">
+        <PersonName>
+          <First>Hilda</First>
+          <Last>Carlen</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p179966">
+        <PersonName>
+          <First>Jonna</First>
+          <Last>Andersson</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p210486">
+        <PersonName>
+          <First>Magdalena</First>
+          <Last>Eriksson</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p193533">
+        <PersonName>
+          <First>Emma</First>
+          <Last>Berglund</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Defender" uID="p164906">
+        <PersonName>
+          <First>Jessica</First>
+          <Last>Samuelsson</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p96722">
+        <PersonName>
+          <First>Caroline</First>
+          <Last>Seger</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p179976">
+        <PersonName>
+          <First>Fridolina</First>
+          <Last>Rolfö</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p98838">
+        <PersonName>
+          <First>Lisa</First>
+          <Last>Dahlkvist</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Midfielder" uID="p96725">
+        <PersonName>
+          <First>Kosovare</First>
+          <Last>Asllani</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Striker" uID="p96728">
+        <PersonName>
+          <First>Lotta</First>
+          <Last>Schelin</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Striker" uID="p164908">
+        <PersonName>
+          <First>Olivia</First>
+          <Last>Schough</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p96703">
+        <PersonName>
+          <First>Hedvig</First>
+          <Last>Lindahl</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p193534">
+        <PersonName>
+          <First>Hanna</First>
+          <Last>Folkesson</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p209849">
+        <PersonName>
+          <First>Elin</First>
+          <Last>Rubensson</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p179971">
+        <PersonName>
+          <First>Pauline</First>
+          <Last>Hammarlund</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p191721">
+        <PersonName>
+          <First>Lina</First>
+          <Last>Hurtig</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p179974">
+        <PersonName>
+          <First>Mimmi</First>
+          <Last>Larsson</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p191720">
+        <PersonName>
+          <First>Stina</First>
+          <Last>Blackstenius</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p186575">
+        <PersonName>
+          <First>Hanna</First>
+          <Last>Glas</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p97384">
+        <PersonName>
+          <First>Linda</First>
+          <Last>Sembrant</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p191682">
+        <PersonName>
+          <First>Zecira</First>
+          <Last>Musovic</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p96719">
+        <PersonName>
+          <First>Nilla</First>
+          <Last>Fischer</Last>
+        </PersonName>
+      </Player>
+      <Player Position="Substitute" uID="p249080">
+        <PersonName>
+          <First>Hanne</First>
+          <Last>Grahns</Last>
+        </PersonName>
+      </Player>
+      <TeamOfficial Type="Manager" uID="man40640">
+        <PersonName>
+          <First>Pia</First>
+          <Last>Sundhage</Last>
+        </PersonName>
+      </TeamOfficial>
+    </Team>
+    <Venue uID="v4610">
+      <Country>Portugal</Country>
+      <Name>Vila Real De Santo Antonio Sports Complex</Name>
+    </Venue>
+  </SoccerDocument>
+</SoccerFeed>
