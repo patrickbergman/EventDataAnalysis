@@ -1,5 +1,6 @@
 import os
 from classes.MatchXMLImporter import MatchXMLImporter
+from helpers.colors import Colors
 
 
 class XMLImportMenu:
@@ -23,7 +24,9 @@ class XMLImportMenu:
     def __importMatchData(self, match):
         path = input('Please enter the relative path to the match data XML file: ')
         matchImporter = MatchXMLImporter(path)
+        print('Adding teams to the match... ', next='')
         for team in matchImporter.getTeamElements():
             match.add_team(team)
+        print(Colors.BLUE + "Done" + Colors.WHITE)
 
         return match
