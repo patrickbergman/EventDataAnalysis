@@ -6,6 +6,7 @@ class Team:
         self.__name = ''
         self.__score = ''
         self.__side = ''
+        self.__players = []
 
     def getId(self):
         return self.__teamId
@@ -24,3 +25,6 @@ class Team:
 
     def setSide(self, teamSide):
         self.__side = teamSide
+
+    def addPlayer(self, player):
+        self.__players.append(player)
