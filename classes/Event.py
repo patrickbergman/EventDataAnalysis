@@ -72,7 +72,7 @@ class Event:
         self.__playerId = playerId
 
     def _setPlayer(self, player):
-        self.__playerId = player
+        self.__player = player
 
     def _addQualifier(self, qualifier):
         self.__qualifiers.append(qualifier)

@@ -9,8 +9,10 @@ from menus.XMLImportMenu import XMLImportMenu
 from stats.TestFunctions import printAllTeams
 from stats.TestFunctions import printAllPlayers
 
+TESTING = True
+
 program = MainMenu()
-xmlMenu = XMLImportMenu()
+xmlMenu = XMLImportMenu(TESTING)
 
 match = Match()
 
