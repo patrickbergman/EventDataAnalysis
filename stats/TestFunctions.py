@@ -15,3 +15,4 @@ def printAllPlayers(match):
         print('Speler: ', end='')
         print(Colors.WHITE, end='')
         print(player.getFullName() + Colors.BLUE + ' (' + match.findTeamById(player.getTeamId()).getName() + ')' + Colors.WHITE)
+

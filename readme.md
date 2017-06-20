@@ -31,10 +31,12 @@ if choice == 'menuOption':
 Beneath you will find the functions a match, team or player has. Although the classes contain more function,
 the function prepended with a single underscore (_function) are use by the importer to set data.
 The functions prepended with a double underscore (__function) are used by the class itself and are meant to be 'private' functions
+
+The functions with a _ and a __ are not suppost to be used to generate statistics!!
 ### Match functions
 function | output
 --- | ---
-findTeamById() | Returns a team object when found
+findTeamById(teamId) | Returns a team object when found (teamId is obligatory)
 getTeams() | Returns an array with all teams (as Team class) of the match
 getPlayers() | Returns an array with all match players as Player class
 
