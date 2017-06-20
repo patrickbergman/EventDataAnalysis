@@ -57,9 +57,19 @@ getFullName() | Returns the full name of a player as a string
 ### Event functions
 function | output
 --- | ---
+getId() | Returns a string with the id of the event
+getEventId() | Returns a string with the event id
+getTypeId() | Returns a string with the type id
+getPeriodeId() | Returns a string with the period id
+getMinute() | Returns a string with the minute of the match when the event occurs
+getSecond() | Returns a string with the second of the match when the event occurs
+getTeamId() | Returns a string with the team id
+getOutcome() | Returns a string with the outcome
+getXCoordinate() | Returns a string with the x coordinate
+getYCoordinate() | Returns a string with the Y coordinate
+getTimestamp() | Returns a string with the timestamp
 hasPlayerId() | Returns a boolean which indicates if the event has a playerId
 getPlayerId() | Returns a string with the player id from the event
-getTeamId() | Returns a string with the team id from the event
 
 ### Qualifier functions
 function | output
