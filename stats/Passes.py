@@ -16,8 +16,6 @@ def __sort(playersArray):
 
     return playersArray
 
-
-
 def __printTeamTopPassers(playersArray):
     topSuccessRate = ['', 0, 0]
     topPasses = ['', 0, 0]

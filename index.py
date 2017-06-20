@@ -1,5 +1,5 @@
 import os
-from helpers.colors import Colors
+from colorama import init, Fore
 
 from classes.Match import Match
 
@@ -20,7 +20,7 @@ xmlMenu = XMLImportMenu(TESTING)
 match = Match()
 
 while program.run_program:
-    print(Colors.WHITE)
+    print(Fore.WHITE)
     program.showMenu()
     choice = program.getMenuChoice()
 

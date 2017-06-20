@@ -1,7 +1,8 @@
 import os
 from classes.MatchXMLImporter import MatchXMLImporter
 from classes.EventXMLImporter import EventXMLImporter
-from helpers.colors import Colors
+from colorama import init, Fore
+init()
 
 class XMLImportMenu:
 
@@ -31,11 +32,11 @@ class XMLImportMenu:
         print('Adding teams to the match... ', '')
         for team in matchImporter.getTeamElements():
             match._addTeam(team)
-        print(Colors.BLUE + "Done" + Colors.WHITE)
+        print(Fore.BLUE + "Done" + Fore.WHITE)
         print('Adding players to the match and teams... ', '')
         for player in matchImporter.getPlayers():
             match._addPlayer(player)
-        print(Colors.BLUE + "Done" + Colors.WHITE)
+        print(Fore.BLUE + "Done" + Fore.WHITE)
 
         return match
 
@@ -45,8 +46,8 @@ class XMLImportMenu:
         else:
             path = input('Please enter the relative path to the event data XML file: ')
         eventImporter = EventXMLImporter(path, match)
-        print('Adding events to the match, teams and players... ', '')
+        print(Fore.WHITE + 'Adding events to the match, teams and players... ', '')
         for event in eventImporter.getEvents(match):
             match._addEvent(event)
-        print(Colors.BLUE + "Done" + Colors.WHITE)
+        print(Fore.BLUE + "Done" + Fore.WHITE)
         return match
