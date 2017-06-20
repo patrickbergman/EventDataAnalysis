@@ -32,10 +32,10 @@ class MatchXMLImporter:
     def getPlayers(self):
         players = []
         for team in self.root.find('SoccerDocument').find('MatchData').iterfind('TeamData'):
-            for player in team.find('PlayerLineUp').iterfind('Player'):
+            for player in team.find('PlayerLineUp').iterfind('MatchPlayer'):
                 tempPlayer = Player(team.get('TeamRef'), player.get('PlayerRef'), player.get('Position'), player.get('ShirtNumber'), player.get('Status'))
                 if (player.get('Position') == 'Substitute'):
-                    player.setSubPosition(player.get('SubPosition'))
+                    tempPlayer.setSubPosition(player.get('SubPosition'))
                 tempPlayer = self.__getPlayerData(tempPlayer, team.get('TeamRef'))
                 players.append(tempPlayer)
         return players
@@ -52,7 +52,7 @@ class MatchXMLImporter:
                         tempPlayer.setFirstName(player.find('PersonName').find('First').text)
                         tempPlayer.setLastName(player.find('PersonName').find('Last').text)
                         if(player.find('PersonName').find('Known') != None):
-                            tempPlayer.setKwownName(player.find('PersonName').find('Known').text)
+                            tempPlayer.setKnownName(player.find('PersonName').find('Known').text)
                         break
         return tempPlayer
 

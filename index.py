@@ -1,10 +1,13 @@
+import os
 from helpers.colors import Colors
 
 from classes.Match import Match
 
 from menus.MainMenu import MainMenu
 from menus.XMLImportMenu import XMLImportMenu
-import os
+
+from stats.TestFunctions import printAllTeams
+from stats.TestFunctions import printAllPlayers
 
 program = MainMenu()
 xmlMenu = XMLImportMenu()
@@ -21,10 +24,10 @@ while program.run_program:
     if program.xml_is_imported:
         if choice == 'a':
             os.system('cls' if os.name == 'nt' else 'clear')
-            print('List the teams from the match')
+            printAllTeams(match)
         if choice == 'b':
             os.system('cls' if os.name == 'nt' else 'clear')
-            print('List the players from the match')
+            printAllPlayers(match)
     else:
         if choice == '1':
             match = xmlMenu.run(match)

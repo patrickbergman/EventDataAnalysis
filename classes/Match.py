@@ -23,6 +23,9 @@ class Match:
     def getTeams(self):
         return self.__teams
 
+    def getPlayers(self):
+        return self.__players
+
     def __addPlayerToTeam(self, player, teamId):
         """Add a player to his/her team"""
         team = self.findTeamById(teamId)
