@@ -4,6 +4,7 @@ from classes.Match import Match
 
 from menus.MainMenu import MainMenu
 from menus.XMLImportMenu import XMLImportMenu
+import os
 
 program = MainMenu()
 xmlMenu = XMLImportMenu()
@@ -19,13 +20,11 @@ while program.run_program:
         program.shutDownProgram()
     if program.xml_is_imported:
         if choice == 'a':
-            print('This is the match menu')
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print('List the teams from the match')
         if choice == 'b':
-            print('This is the teams menu')
-        if choice == 'c':
-            print('This is the players menu')
-        if choice == 'd':
-            print('This is the events menu')
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print('List the players from the match')
     else:
         if choice == '1':
             match = xmlMenu.run(match)
