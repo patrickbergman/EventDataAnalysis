@@ -1,4 +1,4 @@
-class Team:
+class Player:
 
     def __init__(self, teamId, playerId, position, shirt_number, status):
         self.__teamId = teamId
