@@ -14,17 +14,17 @@ class Team:
     def getName(self):
         return self.__name
 
-    def setCountry(self, countryName):
+    def _setCountry(self, countryName):
         self.__country = countryName
 
-    def setName(self, teamName):
+    def _setName(self, teamName):
         self.__name = teamName
 
-    def setScore(self, teamScore):
+    def _setScore(self, teamScore):
         self.__score = teamScore
 
-    def setSide(self, teamSide):
+    def _setSide(self, teamSide):
         self.__side = teamSide
 
-    def addPlayer(self, player):
+    def _addPlayer(self, player):
         self.__players.append(player)

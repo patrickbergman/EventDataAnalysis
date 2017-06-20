@@ -20,12 +20,12 @@ class MatchXMLImporter:
         teams = []
         for team in self.root.find('SoccerDocument').iterfind('Team'):
             tempTeam = Team(team.get('uID'))
-            tempTeam.setCountry(team.find('Country').text)
-            tempTeam.setName(team.find('Name').text)
+            tempTeam._setCountry(team.find('Country').text)
+            tempTeam._setName(team.find('Name').text)
             for teamData in self.root.find('SoccerDocument').find('MatchData').iterfind('TeamData'):
                 if teamData.get('TeamRef') == tempTeam.getId():
-                    tempTeam.setScore(teamData.get('Score'))
-                    tempTeam.setSide(teamData.get('Side'))
+                    tempTeam._setScore(teamData.get('Score'))
+                    tempTeam._setSide(teamData.get('Side'))
             teams.append(tempTeam)
         return teams
 
@@ -35,7 +35,7 @@ class MatchXMLImporter:
             for player in team.find('PlayerLineUp').iterfind('MatchPlayer'):
                 tempPlayer = Player(team.get('TeamRef'), player.get('PlayerRef'), player.get('Position'), player.get('ShirtNumber'), player.get('Status'))
                 if (player.get('Position') == 'Substitute'):
-                    tempPlayer.setSubPosition(player.get('SubPosition'))
+                    tempPlayer._setSubPosition(player.get('SubPosition'))
                 tempPlayer = self.__getPlayerData(tempPlayer, team.get('TeamRef'))
                 players.append(tempPlayer)
         return players
@@ -49,10 +49,10 @@ class MatchXMLImporter:
             if(team.get('uID') == teamRef):
                 for player in team.iterfind('Player'):
                     if(player.get('uID') == tempPlayer.getId()):
-                        tempPlayer.setFirstName(player.find('PersonName').find('First').text)
-                        tempPlayer.setLastName(player.find('PersonName').find('Last').text)
+                        tempPlayer._setFirstName(player.find('PersonName').find('First').text)
+                        tempPlayer._setLastName(player.find('PersonName').find('Last').text)
                         if(player.find('PersonName').find('Known') != None):
-                            tempPlayer.setKnownName(player.find('PersonName').find('Known').text)
+                            tempPlayer._setKnownName(player.find('PersonName').find('Known').text)
                         break
         return tempPlayer
 

@@ -4,15 +4,6 @@ class Match:
         self.__teams = []
         self.__players = []
 
-    def addTeam(self, team):
-        """Add a team to the match"""
-        self.__teams.append(team)
-
-    def addPlayer(self, player):
-        """Add a player to the match and the team"""
-        self.__players.append(player)
-        self.__addPlayerToTeam(player, player.getTeamId())
-
     def findTeamById(self, teamId, default=None):
         """return a team from the array"""
         for team in self.__teams:
@@ -26,7 +17,16 @@ class Match:
     def getPlayers(self):
         return self.__players
 
+    def _addTeam(self, team):
+        """Add a team to the match"""
+        self.__teams.append(team)
+
+    def _addPlayer(self, player):
+        """Add a player to the match and the team"""
+        self.__players.append(player)
+        self.__addPlayerToTeam(player, player.getTeamId())
+
     def __addPlayerToTeam(self, player, teamId):
         """Add a player to his/her team"""
         team = self.findTeamById(teamId)
-        team.addPlayer(player)
+        team._addPlayer(player)
