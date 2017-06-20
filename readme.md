@@ -55,10 +55,19 @@ getTeamId() | Returns the id of the team to which the player belongs as a string
 getFullName() | Returns the full name of a player as a string
 
 ### Event functions
-None
+function | output
+--- | ---
+hasPlayerId() | Returns a boolean which indicates if the event has a playerId
+getPlayerId() | Returns a string with the player id from the event
+getTeamId() | Returns a string with the team id from the event
 
 ### Qualifier functions
-None
+function | output
+--- | ---
+getId() | Returns a string with the id of the qualifier
+getQualifierId() | Returns a string with the qualifier id
+hasValue() | Returns a boolean which indicates if the qualifier has a value
+getValue() | Returns a string with the value of the qualifier
 
 ## Contributers
 - Patrick Bergman

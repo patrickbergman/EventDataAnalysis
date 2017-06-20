@@ -5,5 +5,17 @@ class Qualifier:
         self.__qualifierId = qualifierId
         self.__value = ''
 
+    def getId(self):
+        return self.__id
+
+    def getQualifierId(self):
+        return self.__qualifierId
+
+    def hasValue(self):
+        return self.__value != ''
+
+    def getValue(self):
+        return self.__value
+
     def _setValue(self, value):
         self.__value = value
