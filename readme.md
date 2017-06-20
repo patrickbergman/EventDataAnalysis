@@ -70,6 +70,10 @@ getYCoordinate() | Returns a string with the Y coordinate
 getTimestamp() | Returns a string with the timestamp
 hasPlayerId() | Returns a boolean which indicates if the event has a playerId
 getPlayerId() | Returns a string with the player id from the event
+hasPlayer() | Returns a boolean which indicates if the event has a player object
+getPlayer() | Returns a string with the player object belonging to the event
+getQualifiers() | Returns an array with all qualifiers belonging to the event
+findQualifierById(qId) | Returns a qualifier object when found, otherwise None is returned
 
 ### Qualifier functions
 function | output

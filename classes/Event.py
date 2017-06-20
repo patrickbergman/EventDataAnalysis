@@ -14,6 +14,7 @@ class Event:
         self.__y = y
         self.__timestamp = timestamp
         self.__playerId = ''
+        self.__player = ''
 
     def getId(self):
         return self.__id
@@ -54,8 +55,24 @@ class Event:
     def getPlayerId(self):
         return self.__playerId
 
+    def hasPlayer(self):
+        return self.__player != ''
+
+    def getPlayer(self):
+        return self.__player
+
+    def findQualifierById(self, qId, default=None):
+        """return a qualifier from the array"""
+        for qualifier in self.__qualifiers:
+            if qualifier.getId() == qId:
+                return qualifier
+        return default
+
     def _setPlayerId(self, playerId):
         self.__playerId = playerId
+
+    def _setPlayer(self, player):
+        self.__playerId = player
 
     def _addQualifier(self, qualifier):
         self.__qualifiers.append(qualifier)

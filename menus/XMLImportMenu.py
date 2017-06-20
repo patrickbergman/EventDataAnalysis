@@ -40,7 +40,7 @@ class XMLImportMenu:
         path = input('Please enter the relative path to the event data XML file: ')
         eventImporter = EventXMLImporter(path, match)
         print('Adding events to the match, teams and players... ', '')
-        for event in eventImporter.getEvents():
+        for event in eventImporter.getEvents(match):
             match._addEvent(event)
         print(Colors.BLUE + "Done" + Colors.WHITE)
         return match

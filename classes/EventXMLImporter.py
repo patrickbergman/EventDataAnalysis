@@ -16,7 +16,7 @@ class EventXMLImporter:
     ## functions for returning elements      ##
     ###########################################
 
-    def getEvents(self):
+    def getEvents(self, match):
         """ Returns an array with events and their qualifiers """
         events = []
         for game in self.root.iterfind('Game'):
@@ -24,6 +24,7 @@ class EventXMLImporter:
                 tempEvent = Event(event.get('id'), event.get('event_id'), event.get('type_id'), event.get('period_id'), event.get('min'), event.get('sec'), "t" + event.get('team_id'), event.get('outcome'), event.get('x'), event.get('y'), event.get('timestamp'))
                 if event.get('player_id') is not None:
                     tempEvent._setPlayerId("p" + event.get('player_id'))
+                    tempEvent._setPlayer(match.findPlayerById("p" + event.get('player_id')))
                 if event.find('Q') is not None:
                     for qualifier in event.iterfind('Q'):
                         tempQ = Qualifier(qualifier.get('id'), qualifier.get('qualifier_id'))
