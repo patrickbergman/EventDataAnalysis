@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 from helpers.colors import Colors
 from classes.Team import Team
+from classes.Player import Player
 
 class MatchXMLImporter:
 
@@ -16,8 +17,6 @@ class MatchXMLImporter:
 
     def getTeamElements(self):
         """Returns an array with team objects (classes)"""
-        self.__checkTeamExists()
-        self.__checkTeamDataExists()
         teams = []
         for team in self.root.find('SoccerDocument').iterfind('Team'):
             tempTeam = Team(team.get('uID'))
@@ -30,11 +29,32 @@ class MatchXMLImporter:
             teams.append(tempTeam)
         return teams
 
+    def getPlayers(self):
+        players = []
+        for team in self.root.find('SoccerDocument').find('MatchData').iterfind('TeamData'):
+            for player in team.find('PlayerLineUp').iterfind('Player'):
+                tempPlayer = Player(team.get('TeamRef'), player.get('PlayerRef'), player.get('Position'), player.get('ShirtNumber'), player.get('Status'))
+                if (player.get('Position') == 'Substitute'):
+                    player.setSubPosition(player.get('SubPosition'))
+                tempPlayer = self.__getPlayerData(tempPlayer, team.get('TeamRef'))
+                players.append(tempPlayer)
+        return players
+
     ###########################################
     ## Helper functions for public functions ##
     ###########################################
 
-
+    def __getPlayerData(self, tempPlayer, teamRef):
+        for team in self.root.find('SoccerDocument').iterfind('Team'):
+            if(team.get('uID') == teamRef):
+                for player in team.iterfind('Player'):
+                    if(player.get('uID') == tempPlayer.getId()):
+                        tempPlayer.setFirstName(player.find('PersonName').find('First').text)
+                        tempPlayer.setLastName(player.find('PersonName').find('Last').text)
+                        if(player.find('PersonName').find('Known') != None):
+                            tempPlayer.setKwownName(player.find('PersonName').find('Known').text)
+                        break
+        return tempPlayer
 
     ###########################################
     ## Functions for element checking        ##

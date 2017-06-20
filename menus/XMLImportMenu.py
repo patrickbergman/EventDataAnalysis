@@ -26,7 +26,11 @@ class XMLImportMenu:
         matchImporter = MatchXMLImporter(path)
         print('Adding teams to the match... ', '')
         for team in matchImporter.getTeamElements():
-            match.add_team(team)
+            match.addTeam(team)
+        print(Colors.BLUE + "Done" + Colors.WHITE)
+        print('Adding players to the match and teams... ', '')
+        for player in matchImporter.getPlayers():
+            match.addPlayer(player)
         print(Colors.BLUE + "Done" + Colors.WHITE)
 
         return match
