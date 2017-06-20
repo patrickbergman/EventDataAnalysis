@@ -25,28 +25,22 @@ class Team:
                 return player
         return default
 
-    def findEventsByQualifierId(self, qId, default=None):
+    def findEventsByQualifierId(self, qId):
         """return all events with a certain qualifier id"""
         events = []
         for event in self.__events:
             if event.findQualifierByQualifierId(qId) is not None:
                 events.append(event)
-        if len(events) == 0:
-            return default
-        else:
-            return events
+        return events
 
-    def getEventsByTypeId(self, typeId, default=None):
+    def getEventsByTypeId(self, typeId):
         if type(typeId) is int:
             typeId = str(typeId)
         events = []
         for event in self.__events:
             if event.getTypeId() == typeId:
                 events.append(event)
-        if len(events) == 0:
-            return default
-        else:
-            return events
+        return events
 
     def _setCountry(self, countryName):
         self.__country = countryName

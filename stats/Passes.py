@@ -5,14 +5,7 @@ def printTotalTeamPasses(match):
         successFullPasses = 0
         passes = team.getEventsByTypeId(1)
         offsidePasses = team.getEventsByTypeId(2)
-        if passes is None and offsidePasses is None:
-            totalPasses = 0
-        elif passes is None and offsidePasses is not None:
-            totalPasses = offsidePasses
-        elif passes is not None and offsidePasses is None:
-            totalPasses = passes
-        else:
-            totalPasses = passes + offsidePasses
+        totalPasses = passes + offsidePasses
 
         for playerPassEvent in totalPasses:
             if playerPassEvent.getOutcome() == '1':
