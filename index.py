@@ -10,6 +10,7 @@ from stats.TestFunctions import printAllTeams
 from stats.TestFunctions import printAllPlayers
 from stats.Passes import printTotalTeamPasses
 from stats.Passes import printTopPassers
+from stats.Passes import printListPlayerPassers
 
 TESTING = True
 
@@ -38,6 +39,9 @@ while program.run_program:
         if choice == 'd':
             os.system('cls' if os.name == 'nt' else 'clear')
             printTopPassers(match)
+        if choice == 'e':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            printListPlayerPassers(match)
 
     else:
         if choice == '1':
