@@ -15,6 +15,15 @@ class Event:
         self.__timestamp = timestamp
         self.__playerId = ''
 
+    def hasPlayerId(self):
+        return self.__playerId != ''
+
+    def getPlayerId(self):
+        return self.__playerId
+
+    def getTeamId(self):
+        return self.__teamId
+
     def _setPlayerId(self, playerId):
         self.__playerId = playerId
 

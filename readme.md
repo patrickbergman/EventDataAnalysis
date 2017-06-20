@@ -1,10 +1,10 @@
-## About this program
+# About this program
 
 This program is written at the Leiden University for the Leiden Sport Data Center.
 
 It is a tool to analys match data and event data from soccer matches.
 
-### Installation
+## Installation
 
 Required:
 
@@ -15,7 +15,7 @@ Just download the files and run with:
 python3 index.py
 ```
 
-### Adding statistics functions
+## Adding statistics functions
 1) Add a new python file in the folder 'stats' with your functions
 2) Import the function in index.py with ``` from stats.FileName import function ```
 3) Add your short function description to the menu as a menu option in menus/MainMenu.py inside the function __showMainMenu
@@ -54,6 +54,12 @@ getId() | Returns the player id as a string
 getTeamId() | Returns the id of the team to which the player belongs as a string
 getFullName() | Returns the full name of a player as a string
 
-### Contributers
+### Event functions
+None
+
+### Qualifier functions
+None
+
+## Contributers
 - Patrick Bergman
 - Erik Weenk

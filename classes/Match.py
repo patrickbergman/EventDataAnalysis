@@ -3,6 +3,7 @@ class Match:
     def __init__(self):
         self.__teams = []
         self.__players = []
+        self.__events = []
 
     def findTeamById(self, teamId, default=None):
         """return a team from the array"""
@@ -30,6 +31,10 @@ class Match:
 
     def _addEvent(self, event):
         """Add an event to the match, teams and players"""
+        self.__events.append(event)
+        self.findTeamById(event.getTeamId())._addEvent(event)
+        if event.hasPlayerId():
+            self.findPlayerById(event.getPlayerId())._addEvent(event)
 
     def _addPlayer(self, player):
         """Add a player to the match and the team"""

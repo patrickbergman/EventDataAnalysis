@@ -1,6 +1,7 @@
 class Player:
 
     def __init__(self, teamId, playerId, position, shirt_number, status):
+        self.__events = []
         self.__teamId = teamId
         self.__playerId = playerId
         self.__position = position
@@ -33,3 +34,6 @@ class Player:
 
     def _setKnownName(self, known_name):
         self.__knownName = known_name
+
+    def _addEvent(self, event):
+        self.__events.append(event)

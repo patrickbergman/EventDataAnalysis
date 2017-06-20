@@ -21,9 +21,9 @@ class EventXMLImporter:
         events = []
         for game in self.root.iterfind('Game'):
             for event in game.iterfind('Event'):
-                tempEvent = Event(event.get('id'), event.get('event_id'), event.get('type_id'), event.get('period_id'), event.get('min'), event.get('sec'), event.get('team_id'), event.get('outcome'), event.get('x'), event.get('y'), event.get('timestamp'))
+                tempEvent = Event(event.get('id'), event.get('event_id'), event.get('type_id'), event.get('period_id'), event.get('min'), event.get('sec'), "t" + event.get('team_id'), event.get('outcome'), event.get('x'), event.get('y'), event.get('timestamp'))
                 if event.get('player_id') is not None:
-                    tempEvent._setPlayerId(event.get('player_id'))
+                    tempEvent._setPlayerId("p" + event.get('player_id'))
                 if event.find('Q') is not None:
                     for qualifier in event.iterfind('Q'):
                         tempQ = Qualifier(qualifier.get('id'), qualifier.get('qualifier_id'))
