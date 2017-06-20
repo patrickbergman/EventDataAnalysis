@@ -1,5 +1,7 @@
 import xml.etree.ElementTree as ET
 from helpers.colors import Colors
+from classes.Event import Event
+from classes.Qualifier import Qualifier
 
 class EventXMLImporter:
 
@@ -15,8 +17,20 @@ class EventXMLImporter:
     ###########################################
 
     def getEvents(self):
+        """ Returns an array with events and their qualifiers """
         events = []
-
+        for game in self.root.iterfind('Game'):
+            for event in game.iterfind('Event'):
+                tempEvent = Event(event.get('id'), event.get('event_id'), event.get('type_id'), event.get('period_id'), event.get('min'), event.get('sec'), event.get('team_id'), event.get('outcome'), event.get('x'), event.get('y'), event.get('timestamp'))
+                if event.get('player_id') is not None:
+                    tempEvent._setPlayerId(event.get('player_id'))
+                if event.find('Q') is not None:
+                    for qualifier in event.iterfind('Q'):
+                        tempQ = Qualifier(qualifier.get('id'), qualifier.get('qualifier_id'))
+                        if qualifier.get('value') is not None:
+                            tempQ._setValue(qualifier.get('value'))
+                        tempEvent._addQualifier(tempQ)
+                events.append(tempEvent)
         return events
 
     ###########################################
