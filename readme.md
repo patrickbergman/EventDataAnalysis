@@ -48,6 +48,7 @@ function | output
 --- | ---
 getId() | Returns the team id as a string
 getName() | Returns the team name as a string
+getEvents() | Returns an array with all match events as Event class
 findPlayerById(playerId) | Returns a player object when found
 findEventsByQualifierId(qId) | Returns an array with all events that have a qualifier with qId as qualifier_id
 
@@ -57,6 +58,8 @@ function | output
 getId() | Returns the player id as a string
 getTeamId() | Returns the id of the team to which the player belongs as a string
 getFullName() | Returns the full name of a player as a string
+getEvents() | Returns an array with all match events as Event class
+findEventsByQualifierId(qId) | Returns an array with all events that have a qualifier with qId as qualifier_id
 
 ### Event functions
 function | output

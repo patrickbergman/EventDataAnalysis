@@ -15,6 +15,9 @@ class Team:
     def getName(self):
         return self.__name
 
+    def getEvents(self):
+        return self.__events
+
     def findPlayerById(self, playerId, default=None):
         """return a player from the array"""
         for player in self.__players:

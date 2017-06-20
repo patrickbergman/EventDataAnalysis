@@ -23,6 +23,20 @@ class Player:
             return self.__firstName + ' ' + self.__lastName
         return self.__knownName
 
+    def getEvents(self):
+        return self.__events
+
+    def findEventsByQualifierId(self, qId, default=None):
+        """return all events with a certain qualifier id"""
+        events = []
+        for event in self.__events:
+            if event.findQualifierByQualifierId(qId) is not None:
+                events.append(event)
+        if len(events) == 0:
+            return default
+        else:
+            return events
+
     def _setSubPosition(self, sub_position):
         self.__subPosition = sub_position
 
