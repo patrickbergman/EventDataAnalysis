@@ -1,5 +1,6 @@
 import os
 from classes.MatchXMLImporter import MatchXMLImporter
+from classes.EventXMLImporter import EventXMLImporter
 from helpers.colors import Colors
 
 
@@ -16,7 +17,7 @@ class XMLImportMenu:
             print('| Please follow the instructions     |')
             print('+------------------------------------+\n')
             match = self.__importMatchData(match)
-            # self.__importEventData()
+            match = self.__importEventData(match)
             self.running = False
 
         return match
@@ -33,4 +34,13 @@ class XMLImportMenu:
             match._addPlayer(player)
         print(Colors.BLUE + "Done" + Colors.WHITE)
 
+        return match
+
+    def __importEventData(self, match):
+        path = input('Please enter the relative path to the event data XML file: ')
+        eventImporter = EventXMLImporter(path, match)
+        # print('Adding events to the match, teams and players... ', '')
+        # for event in eventImporter.getEvents():
+        #     match._addEvent(event)
+        # print(Colors.BLUE + "Done" + Colors.WHITE)
         return match

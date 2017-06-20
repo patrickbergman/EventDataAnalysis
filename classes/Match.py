@@ -11,6 +11,13 @@ class Match:
                 return team
         return default
 
+    def findPlayerById(self, playerId, default=None):
+        """return a player from the array"""
+        for player in self.__players:
+            if player.getId() == playerId:
+                return player
+        return default
+
     def getTeams(self):
         return self.__teams
 
@@ -20,6 +27,9 @@ class Match:
     def _addTeam(self, team):
         """Add a team to the match"""
         self.__teams.append(team)
+
+    def _addEvent(self, event):
+        """Add an event to the match, teams and players"""
 
     def _addPlayer(self, player):
         """Add a player to the match and the team"""

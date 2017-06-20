@@ -37,6 +37,7 @@ The functions with a _ and a __ are not suppost to be used to generate statistic
 function | output
 --- | ---
 findTeamById(teamId) | Returns a team object when found (teamId is obligatory)
+findPlayerById(playerId) | Returns a player object when found (playerId is obligatory)
 getTeams() | Returns an array with all teams (as Team class) of the match
 getPlayers() | Returns an array with all match players as Player class
 
