@@ -26,6 +26,8 @@ while program.run_program:
 
     if choice == 'x' or choice == 'X':
         program.shutDownProgram()
+    if choice == 'z' or choice == 'Z':
+        os.system('cls' if os.name == 'nt' else 'clear')
     if program.xml_is_imported:
         if choice == 'a':
             os.system('cls' if os.name == 'nt' else 'clear')

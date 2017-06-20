@@ -23,6 +23,9 @@ class Player:
             return self.__firstName + ' ' + self.__lastName
         return self.__knownName
 
+    def getPosition(self):
+        return self.__position
+
     def getEvents(self):
         return self.__events
 

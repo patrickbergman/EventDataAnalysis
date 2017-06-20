@@ -25,17 +25,17 @@ def __printTeamTopPassers(playersArray):
             topPasses = playerData
         if playerData[2] > topSuccessRate[2]:
             topSuccessRate = playerData
-    print("Top passer: " + Fore.GREEN + topPasses[0].getFullName() + Fore.WHITE + " with " + Fore.GREEN + str(topPasses[1]) + Fore.WHITE + " passes (" + Fore.GREEN, end='')
+    print("Top passer: " + Fore.GREEN + topPasses[0].getFullName() + Fore.CYAN + " (" + playerData[0].getPosition() + ") " + Fore.WHITE + " with " + Fore.GREEN + str(topPasses[1]) + Fore.WHITE + " passes (" + Fore.GREEN, end='')
     print("%.2f" % round(topPasses[2], 2), end='')
     print(" % " + Fore.WHITE + " successful passes)")
-    print("Top success: " + Fore.GREEN + topSuccessRate[0].getFullName() + Fore.WHITE + " with " + Fore.GREEN, end='')
+    print("Top success: " + Fore.GREEN + topSuccessRate[0].getFullName() + Fore.CYAN + " (" + playerData[0].getPosition() + ") " + Fore.WHITE + " with " + Fore.GREEN, end='')
     print("%.2f" % round(topSuccessRate[2], 2), end='')
     print(" % " + Fore.WHITE + "successful passes (passes made: " + Fore.GREEN + str(topSuccessRate[1]) + Fore.WHITE + ")")
 
 def __printTeamPassers(playersArray):
     sortedData = __sort(playersArray)
-    for playerData in playersArray:
-        print(Fore.BLUE + playerData[0].getFullName() + Fore.WHITE + ": ", end='')
+    for playerData in sortedData:
+        print(Fore.LIGHTBLACK_EX + playerData[0].getFullName() + Fore.CYAN + " (" + playerData[0].getPosition() + ") " + Fore.WHITE + ": ", end='')
         print(Fore.GREEN + str(playerData[1]) + Fore.WHITE + " passes (" + Fore.GREEN, end='')
         print("%.2f" % round(playerData[2], 2), end='')
         print(" %" + Fore.WHITE + " successful)")

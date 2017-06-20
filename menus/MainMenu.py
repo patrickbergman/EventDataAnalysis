@@ -32,11 +32,13 @@ class MainMenu:
         print('| d) Top match passers                |')
         print('| e) List player passes stats         |')
         print('|                                     |')
+        print('| Z) Clear screen                     |')
         print('| X) Exit program                     |')
 
     def __showImportMenu(self):
         print('| 1) Import event and match XML       |')
         print('|                                     |')
+        print('| Z) Clear screen                     |')
         print('| X) Exit program                     |')
 
     def __showMakerText(self):
