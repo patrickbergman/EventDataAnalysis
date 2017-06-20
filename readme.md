@@ -36,16 +36,20 @@ The functions with a _ and a __ are not suppost to be used to generate statistic
 ### Match functions
 function | output
 --- | ---
-findTeamById(teamId) | Returns a team object when found (teamId is obligatory)
-findPlayerById(playerId) | Returns a player object when found (playerId is obligatory)
+findTeamById(teamId) | Returns a team object when found
+findPlayerById(playerId) | Returns a player object when found
+findEventsByQualifierId(qId) | Returns an array with all events that have a qualifier with qId as qualifier_id
 getTeams() | Returns an array with all teams (as Team class) of the match
 getPlayers() | Returns an array with all match players as Player class
+getEvents() | Returns an array with all match events as Event class
 
 ### Team functions
 function | output
 --- | ---
 getId() | Returns the team id as a string
 getName() | Returns the team name as a string
+findPlayerById(playerId) | Returns a player object when found
+findEventsByQualifierId(qId) | Returns an array with all events that have a qualifier with qId as qualifier_id
 
 ### Player functions
 function | output
@@ -70,10 +74,10 @@ getYCoordinate() | Returns a string with the Y coordinate
 getTimestamp() | Returns a string with the timestamp
 hasPlayerId() | Returns a boolean which indicates if the event has a playerId
 getPlayerId() | Returns a string with the player id from the event
-hasPlayer() | Returns a boolean which indicates if the event has a player object
-getPlayer() | Returns a string with the player object belonging to the event
+hasPlayer() | Returns a boolean which indicates if the event has a player class
+getPlayer() | Returns a string with the player class belonging to the event
 getQualifiers() | Returns an array with all qualifiers belonging to the event
-findQualifierByQualifierId(qId) | Returns a qualifier object when found, otherwise None is returned
+findQualifierByQualifierId(qId) | Returns a qualifier class when found, otherwise None is returned
 
 ### Qualifier functions
 function | output

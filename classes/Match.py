@@ -19,11 +19,25 @@ class Match:
                 return player
         return default
 
+    def findEventsByQualifierId(self, qId, default=None):
+        """return all events with a certain qualifier id"""
+        events = []
+        for event in self.__events:
+            if event.findQualifierByQualifierId(qId) is not None:
+                events.append(event)
+        if len(events) == 0:
+            return default
+        else:
+            return events
+
     def getTeams(self):
         return self.__teams
 
     def getPlayers(self):
         return self.__players
+
+    def getEvents(self):
+        return self.__events
 
     def _addTeam(self, team):
         """Add a team to the match"""
