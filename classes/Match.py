@@ -23,7 +23,7 @@ class Match:
         """return all events with a certain qualifier id"""
         events = []
         for event in self.__events:
-            if event.findQualifierByQualifierId(qId) is not None:
+            if event.findQualifierByQualifierId(qId):
                 events.append(event)
         if len(events) == 0:
             return default

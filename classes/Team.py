@@ -36,6 +36,18 @@ class Team:
         else:
             return events
 
+    def getEventsByTypeId(self, typeId, default=None):
+        if type(typeId) is int:
+            typeId = str(typeId)
+        events = []
+        for event in self.__events:
+            if event.getTypeId() == typeId:
+                events.append(event)
+        if len(events) == 0:
+            return default
+        else:
+            return events
+
     def _setCountry(self, countryName):
         self.__country = countryName
 

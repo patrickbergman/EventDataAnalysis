@@ -8,6 +8,7 @@ from menus.XMLImportMenu import XMLImportMenu
 
 from stats.TestFunctions import printAllTeams
 from stats.TestFunctions import printAllPlayers
+from stats.Passes import printTotalTeamPasses
 
 TESTING = True
 
@@ -30,6 +31,10 @@ while program.run_program:
         if choice == 'b':
             os.system('cls' if os.name == 'nt' else 'clear')
             printAllPlayers(match)
+        if choice == 'c':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            printTotalTeamPasses(match)
+
     else:
         if choice == '1':
             match = xmlMenu.run(match)

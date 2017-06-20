@@ -29,6 +29,7 @@ class MainMenu:
     def __showMainMenu(self):
         print('| a) List match teams                 |')
         print('| b) List match players               |')
+        print('| c) Teams total passes               |')
         print('|                                     |')
         print('| X) Exit program                     |')
 
