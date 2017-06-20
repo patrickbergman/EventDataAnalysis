@@ -32,10 +32,16 @@ class Player:
         for event in self.__events:
             if event.findQualifierByQualifierId(qId) is not None:
                 events.append(event)
-        if len(events) == 0:
-            return default
-        else:
-            return events
+        return events
+
+    def getEventsByTypeId(self, typeId):
+        if type(typeId) is int:
+            typeId = str(typeId)
+        events = []
+        for event in self.__events:
+            if event.getTypeId() == typeId:
+                events.append(event)
+        return events
 
     def _setSubPosition(self, sub_position):
         self.__subPosition = sub_position

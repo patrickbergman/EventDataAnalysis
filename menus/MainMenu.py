@@ -30,6 +30,7 @@ class MainMenu:
         print('| a) List match teams                 |')
         print('| b) List match players               |')
         print('| c) Teams total passes               |')
+        print('| d) Top match passers                |')
         print('|                                     |')
         print('| X) Exit program                     |')
 

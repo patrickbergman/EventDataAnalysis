@@ -15,6 +15,9 @@ class Team:
     def getName(self):
         return self.__name
 
+    def getPlayers(self):
+        return self.__players
+
     def getEvents(self):
         return self.__events
 
