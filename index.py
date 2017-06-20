@@ -10,7 +10,7 @@ from stats.TestFunctions import printAllTeams
 from stats.TestFunctions import printAllPlayers
 from stats.Passes import printTotalTeamPasses
 
-TESTING = True
+TESTING = False
 
 program = MainMenu()
 xmlMenu = XMLImportMenu(TESTING)
