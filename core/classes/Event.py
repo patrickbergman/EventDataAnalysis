@@ -61,6 +61,12 @@ class Event:
     def getPlayer(self):
         return self.__player
 
+    def hasQualifierByQualifierId(self, qId):
+        for qualifier in self.__qualifiers:
+            if qualifier.getQualifierId() == qId:
+                return True
+        return False
+
     def findQualifierByQualifierId(self, qId, default=None):
         """return a qualifier from the array"""
         for qualifier in self.__qualifiers:

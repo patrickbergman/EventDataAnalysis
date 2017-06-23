@@ -9,6 +9,9 @@ from stats.Passes import printTopPassers
 from stats.Passes import printTotalTeamPasses
 from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
+from stats.BallPossession import percentagePossession
+from stats.BallPossession import intervalPossession
+from stats.BallPossession import intervalPossession
 
 init()
 
@@ -44,6 +47,15 @@ while program.run_program:
         if choice == 'e':
             os.system('cls' if os.name == 'nt' else 'clear')
             printListPlayerPassers(match)
+        if choice == 'f':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            percentagePossession(match)
+        if choice == 'g':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            intervalPossession(match)
+        if choice == 'h':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            intervalPossession(match)
 
     else:
         if choice == '1':
