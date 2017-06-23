@@ -1,8 +1,8 @@
 class Event:
 
-    def __init__(self, id, eventId, typeId, periodId, min, sec, teamId, outcome, x, y, timestamp):
+    def __init__(self, eId, eventId, typeId, periodId, min, sec, teamId, outcome, x, y, timestamp):
         self.__qualifiers = []
-        self.__id = id
+        self.__id = eId
         self.__eventId = eventId
         self.__typeId = typeId
         self.__periodId = periodId

@@ -1,7 +1,9 @@
 import xml.etree.ElementTree as ET
-from colorama import init, Fore
-from classes.Event import Event
-from classes.Qualifier import Qualifier
+
+from core.classes.Event import Event
+from core.classes.Qualifier import Qualifier
+from core.colorama import init, Fore
+
 init()
 
 class EventXMLImporter:

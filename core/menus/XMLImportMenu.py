@@ -1,7 +1,9 @@
 import os
-from classes.MatchXMLImporter import MatchXMLImporter
-from classes.EventXMLImporter import EventXMLImporter
-from colorama import init, Fore
+
+from core.classes.EventXMLImporter import EventXMLImporter
+from core.classes.MatchXMLImporter import MatchXMLImporter
+from core.colorama import init, Fore
+
 init()
 
 class XMLImportMenu:

@@ -1,7 +1,9 @@
 import xml.etree.ElementTree as ET
-from colorama import init, Fore
-from classes.Team import Team
-from classes.Player import Player
+
+from core.classes.Team import Team
+from core.classes.Player import Player
+from core.colorama import init, Fore
+
 init()
 
 class MatchXMLImporter:

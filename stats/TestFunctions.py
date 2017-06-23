@@ -1,4 +1,4 @@
-from colorama import init, Fore
+from core.colorama import Fore
 
 def printAllTeams(match):
     print('List of teams in this match:')

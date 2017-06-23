@@ -1,4 +1,4 @@
-from colorama import init, Fore
+from core.colorama import init, Fore
 init()
 
 def __swap(array, indexA, indexB):
@@ -25,10 +25,10 @@ def __printTeamTopPassers(playersArray):
             topPasses = playerData
         if playerData[2] > topSuccessRate[2]:
             topSuccessRate = playerData
-    print("Top passer: " + Fore.GREEN + topPasses[0].getFullName() + Fore.CYAN + " (" + playerData[0].getPosition() + ") " + Fore.WHITE + " with " + Fore.GREEN + str(topPasses[1]) + Fore.WHITE + " passes (" + Fore.GREEN, end='')
+    print("Top passer: " + Fore.LIGHTBLACK_EX + topPasses[0].getFullName() + Fore.CYAN + " (" + playerData[0].getPosition() + ") " + Fore.WHITE + " with " + Fore.GREEN + str(topPasses[1]) + Fore.WHITE + " passes (" + Fore.GREEN, end='')
     print("%.2f" % round(topPasses[2], 2), end='')
     print(" % " + Fore.WHITE + " successful passes)")
-    print("Top success: " + Fore.GREEN + topSuccessRate[0].getFullName() + Fore.CYAN + " (" + playerData[0].getPosition() + ") " + Fore.WHITE + " with " + Fore.GREEN, end='')
+    print("Top success: " + Fore.LIGHTBLACK_EX + topSuccessRate[0].getFullName() + Fore.CYAN + " (" + playerData[0].getPosition() + ") " + Fore.WHITE + " with " + Fore.GREEN, end='')
     print("%.2f" % round(topSuccessRate[2], 2), end='')
     print(" % " + Fore.WHITE + "successful passes (passes made: " + Fore.GREEN + str(topSuccessRate[1]) + Fore.WHITE + ")")
 

@@ -1,16 +1,16 @@
 import os
-from colorama import init, Fore
 
-from classes.Match import Match
-
-from menus.MainMenu import MainMenu
-from menus.XMLImportMenu import XMLImportMenu
-
-from stats.TestFunctions import printAllTeams
-from stats.TestFunctions import printAllPlayers
-from stats.Passes import printTotalTeamPasses
-from stats.Passes import printTopPassers
+from core.classes.Match import Match
+from core.colorama import init, Fore
+from core.menus.MainMenu import MainMenu
+from core.menus.XMLImportMenu import XMLImportMenu
 from stats.Passes import printListPlayerPassers
+from stats.Passes import printTopPassers
+from stats.Passes import printTotalTeamPasses
+from stats.TestFunctions import printAllPlayers
+from stats.TestFunctions import printAllTeams
+
+init()
 
 TESTING = True
 

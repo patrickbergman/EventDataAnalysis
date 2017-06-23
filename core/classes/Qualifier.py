@@ -1,7 +1,7 @@
 class Qualifier:
 
-    def __init__(self, id, qualifierId):
-        self.__id = id
+    def __init__(self, qId, qualifierId):
+        self.__id = qId
         self.__qualifierId = qualifierId
         self.__value = ''
 
