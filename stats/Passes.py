@@ -97,3 +97,59 @@ def printListPlayerPassers(match):
             ])
         print(Fore.YELLOW + "Team " + team.getName() + ":" + Fore.WHITE)
         __printTeamPassers(teamPlayerPasses)
+
+def printTeamPassesTimeline(match):
+    timeframeStart = 0
+    timeframeEnd = 5
+    teamA = match.getTeams()[0]
+    teamB = match.getTeams()[1]
+    passesTeamA = 0
+    passesTeamB = 0
+    successfulPassesTeamA = 0
+    successfulPassesTeamB = 0
+    successRateTeamA = 0
+    successRateTeamB = 0
+    for event in match.getEvents():
+        # check if the event is a pass
+        if event.getTypeId() == '1' or event.getTypeId() == '2':
+            # check new timeframe, then print current stats and reset them
+            if event.getMinute() >= timeframeEnd and event.getMinute() > 0:
+                print(Fore.YELLOW + str(timeframeStart) + "-" + str(timeframeEnd) + ": ", end='')
+                print(Fore.WHITE + teamA.getName() + ": " + Fore.BLUE + str(passesTeamA) + " passes " + Fore.MAGENTA + "(", end='')
+                print("%.2f" % round(successRateTeamA, 2), end='')
+                print(") ", end='')
+                print(Fore.WHITE + teamB.getName() + ": " + Fore.BLUE + str(passesTeamB) + " passes " + Fore.MAGENTA + "(", end='')
+                print("%.2f" % round(successRateTeamB, 2), end='')
+                print(")")
+                timeframeStart = timeframeStart + 5
+                timeframeEnd = timeframeEnd + 5
+                passesTeamA = 0
+                passesTeamB = 0
+                successfulPassesTeamA = 0
+                successfulPassesTeamB = 0
+                successRateTeamA = 0
+                successRateTeamB = 0
+            # adjust team A
+            if event.getTeamId() == teamA.getId():
+                # adjust total passes and successrate in this timeframe
+                if event.getOutcome() == '1':
+                    successfulPassesTeamA = successfulPassesTeamA + 1
+                passesTeamA = passesTeamA + 1
+                successRateTeamA = (successfulPassesTeamA / passesTeamA) * 100
+            #adjust team B
+            if event.getTeamId() == teamB.getId():
+                # adjust total passes and successrate in this timeframe
+                if event.getOutcome() == '1':
+                    successfulPassesTeamB = successfulPassesTeamB + 1
+                passesTeamB = passesTeamB + 1
+                successRateTeamB = (successfulPassesTeamB / passesTeamB) * 100
+    print(Fore.YELLOW + str(timeframeStart) + "-" + str(timeframeEnd) + ": ", end='')
+    print(Fore.WHITE + teamA.getName() + ": " + Fore.BLUE + str(passesTeamA) + " passes " + Fore.MAGENTA + "(", end='')
+    print("%.2f" % round(successRateTeamA, 2), end='')
+    print(") ", end='')
+    print(Fore.WHITE + teamB.getName() + ": " + Fore.BLUE + str(passesTeamB) + " passes " + Fore.MAGENTA + "(", end='')
+    print("%.2f" % round(successRateTeamB, 2), end='')
+    print(")")
+
+
+

@@ -7,10 +7,10 @@ from core.menus.XMLImportMenu import XMLImportMenu
 from stats.Passes import printListPlayerPassers
 from stats.Passes import printTopPassers
 from stats.Passes import printTotalTeamPasses
+from stats.Passes import printTeamPassesTimeline
 from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
 from stats.BallPossession import percentagePossession
-from stats.BallPossession import intervalPossession
 from stats.BallPossession import intervalPossession
 
 init()
@@ -43,17 +43,20 @@ while program.run_program:
             printTotalTeamPasses(match)
         if choice == 'd':
             os.system('cls' if os.name == 'nt' else 'clear')
-            printTopPassers(match)
+            printTeamPassesTimeline(match)
         if choice == 'e':
             os.system('cls' if os.name == 'nt' else 'clear')
-            printListPlayerPassers(match)
+            printTopPassers(match)
         if choice == 'f':
             os.system('cls' if os.name == 'nt' else 'clear')
-            percentagePossession(match)
+            printListPlayerPassers(match)
         if choice == 'g':
             os.system('cls' if os.name == 'nt' else 'clear')
-            intervalPossession(match)
+            percentagePossession(match)
         if choice == 'h':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            intervalPossession(match)
+        if choice == 'i':
             os.system('cls' if os.name == 'nt' else 'clear')
             intervalPossession(match)
 

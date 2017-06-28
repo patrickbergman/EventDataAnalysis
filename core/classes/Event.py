@@ -29,10 +29,10 @@ class Event:
         return self.__periodId
 
     def getMinute(self):
-        return self.__min
+        return int(self.__min)
 
     def getSecond(self):
-        return self.__sec
+        return int(self.__sec)
 
     def getTeamId(self):
         return self.__teamId
