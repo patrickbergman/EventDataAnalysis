@@ -93,3 +93,5 @@ getValue() | Returns a string with the value of the qualifier
 ## Contributers
 - Patrick Bergman
 - Erik Weenk
+- Lars Suanet
+- Jody Liu
