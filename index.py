@@ -8,7 +8,6 @@ from stats.Passes import printListPlayerPassers
 from stats.Passes import printTopPassers
 from stats.Passes import printTotalTeamPasses
 from stats.Passes import printTeamPassesTimeline
-# from stats.Passes import plotPassesStats
 from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
 from stats.BallPossession import percentagePossession
@@ -54,17 +53,14 @@ while program.run_program:
             printListPlayerPassers(match)
         if choice == 'g':
             os.system('cls' if os.name == 'nt' else 'clear')
-            print('Wooooh statistieken voor de passes!!!')
+            percentagePossession(match)
         if choice == 'h':
             os.system('cls' if os.name == 'nt' else 'clear')
-            percentagePossession(match)
+            intervalPossession(match)
         if choice == 'i':
             os.system('cls' if os.name == 'nt' else 'clear')
             intervalPossession(match)
         if choice == 'j':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            intervalPossession(match)
-        if choice == 'k':
             os.system('cls' if os.name == 'nt' else 'clear')
             printDuels(match)
 
