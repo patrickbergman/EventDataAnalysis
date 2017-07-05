@@ -53,14 +53,17 @@ while program.run_program:
             printListPlayerPassers(match)
         if choice == 'g':
             os.system('cls' if os.name == 'nt' else 'clear')
-            percentagePossession(match)
+            print('Wooooh statistieken voor de passes!!!')
         if choice == 'h':
             os.system('cls' if os.name == 'nt' else 'clear')
-            intervalPossession(match)
+            percentagePossession(match)
         if choice == 'i':
             os.system('cls' if os.name == 'nt' else 'clear')
             intervalPossession(match)
         if choice == 'j':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            intervalPossession(match)
+        if choice == 'k':
             os.system('cls' if os.name == 'nt' else 'clear')
             printDuels(match)
 
