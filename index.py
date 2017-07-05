@@ -12,6 +12,7 @@ from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
 from stats.BallPossession import percentagePossession
 from stats.BallPossession import intervalPossession
+from stats.Duels import printDuels
 
 init()
 
@@ -59,6 +60,9 @@ while program.run_program:
         if choice == 'i':
             os.system('cls' if os.name == 'nt' else 'clear')
             intervalPossession(match)
+        if choice == 'j':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            printDuels(match)
 
     else:
         if choice == '1':
