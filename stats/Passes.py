@@ -1,4 +1,5 @@
 from core.colorama import init, Fore
+from math import atan, degrees
 init()
 
 def __swap(array, indexA, indexB):
@@ -361,5 +362,49 @@ def printTeamPassesTimeline(match):
     plt.title(teamB.getName())
     plt.show()
 
+def __getAngle(xStart, xEnd, yStart, yEnd):
+    if (float(xStart) - float(xEnd)) == 0:
+        angle = 0
+    else:
+        angle = degrees(atan((float(yStart) - float(yEnd)) / (float(xStart) - float(xEnd))))
+    if yStart >= yEnd and xStart >= xEnd:
+        return angle + 180
+    if yStart >= yEnd and xStart < xEnd:
+        return angle + 90
+    if yStart < yEnd and xStart >= xEnd:
+        return angle + 270
+
+    return angle
 
 
+def getAnglesForPasses(match):
+    angleCounts = [0, 0, 0, 0, 0, 0, 0, 0]
+    for event in match.getEvents():
+        if event.hasQualifierByQualifierId(140) and event.hasQualifierByQualifierId(141):
+            angle = __getAngle(event.getXCoordinate(), event.findQualifierByQualifierId(140).getValue(), event.getYCoordinate(), event.findQualifierByQualifierId(141).getValue())
+            # print(str(angle))
+            if (angle >= 0 and angle < 45) or angle == 360:
+                angleCounts[0] = angleCounts[0] + 1
+            if angle >= 45 and angle < 90:
+                angleCounts[1] = angleCounts[1] + 1
+            if angle >= 90 and angle < 135:
+                angleCounts[2] = angleCounts[2] + 1
+            if angle >= 135 and angle < 180:
+                angleCounts[3] = angleCounts[3] + 1
+            if angle >= 180 and angle < 225:
+                angleCounts[4] = angleCounts[4] + 1
+            if angle >= 225 and angle < 270:
+                angleCounts[5] = angleCounts[5] + 1
+            if angle >= 270 and angle < 315:
+                angleCounts[6] = angleCounts[6] + 1
+            if angle >= 315 and angle < 360:
+                angleCounts[7] = angleCounts[7] + 1
+
+    print(Fore.YELLOW + "0 - 45 degrees: " + Fore.WHITE + str(angleCounts[0]))
+    print(Fore.YELLOW + "45 - 90 degrees: " + Fore.WHITE + str(angleCounts[1]))
+    print(Fore.YELLOW + "90 - 135 degrees: " + Fore.WHITE + str(angleCounts[2]))
+    print(Fore.YELLOW + "135 - 180 degrees: " + Fore.WHITE + str(angleCounts[3]))
+    print(Fore.YELLOW + "180 - 225 degrees: " + Fore.WHITE + str(angleCounts[4]))
+    print(Fore.YELLOW + "225 - 270 degrees: " + Fore.WHITE + str(angleCounts[5]))
+    print(Fore.YELLOW + "270 - 315 degrees: " + Fore.WHITE + str(angleCounts[6]))
+    print(Fore.YELLOW + "315 - 360 degrees: " + Fore.WHITE + str(angleCounts[7]))

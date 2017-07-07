@@ -2,7 +2,7 @@ class Qualifier:
 
     def __init__(self, qId, qualifierId):
         self.__id = qId
-        self.__qualifierId = qualifierId
+        self.__qualifierId = int(qualifierId)
         self.__value = ''
 
     def getId(self):

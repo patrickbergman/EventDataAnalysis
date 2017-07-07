@@ -8,6 +8,7 @@ from stats.Passes import printListPlayerPassers
 from stats.Passes import printTopPassers
 from stats.Passes import printTotalTeamPasses
 from stats.Passes import printTeamPassesTimeline
+from stats.Passes import getAnglesForPasses
 from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
 from stats.BallPossession import percentagePossession
@@ -63,6 +64,9 @@ while program.run_program:
         if choice == 'j':
             os.system('cls' if os.name == 'nt' else 'clear')
             printDuels(match)
+        if choice == 'k':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            getAnglesForPasses(match)
 
     else:
         if choice == '1':

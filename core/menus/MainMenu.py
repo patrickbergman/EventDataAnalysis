@@ -36,6 +36,7 @@ class MainMenu:
         print('| h) Ball possession per interval     |')
         print('| i) Timeline of ball possession      |')
         print('| j) Plot duals                       |')
+        print('| k) Show pass angle stats            |')
         print('|                                     |')
         print('| Z) Clear screen                     |')
         print('| X) Exit program                     |')
