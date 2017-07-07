@@ -383,6 +383,8 @@ def getAnglesForPasses(match):
         if event.hasQualifierByQualifierId(140) and event.hasQualifierByQualifierId(141):
             angle = __getAngle(event.getXCoordinate(), event.findQualifierByQualifierId(140).getValue(), event.getYCoordinate(), event.findQualifierByQualifierId(141).getValue())
             # print(str(angle))
+            if angle < 0:
+                angle = angle * -1
             if (angle >= 0 and angle < 45) or angle == 360:
                 angleCounts[0] = angleCounts[0] + 1
             if angle >= 45 and angle < 90:
