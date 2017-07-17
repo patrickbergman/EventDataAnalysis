@@ -120,92 +120,166 @@ def printTeamPassesTimeline(match):
     timeframeEnd = 5
     teamA = match.getTeams()[0]
     teamB = match.getTeams()[1]
-    teamApasses = []
-    teamAsuccess = []
-    teamBpasses = []
-    teamBsuccess = []
+    teamApassesOwnHalf = []
+    teamApassesOpponentHalf = []
+    teamAsuccessOwnHalf = []
+    teamAsuccessOpponentHalf = []
+    teamBpassesOwnHalf = []
+    teamBpassesOpponentHalf = []
+    teamBsuccessOwnHalf = []
+    teamBsuccessOpponentHalf = []
     time = []
-    passesTeamA = 0
-    passesTeamB = 0
-    successfulPassesTeamA = 0
-    successfulPassesTeamB = 0
-    successRateTeamA = 0
-    successRateTeamB = 0
+    passesTeamAOwnHalf = 0
+    passesTeamAOpponentHalf = 0
+    passesTeamBOwnHalf = 0
+    passesTeamBOpponentHalf = 0
+    successfulPassesTeamAOwnHalf = 0
+    successfulPassesTeamAOpponentHalf = 0
+    successfulPassesTeamBOwnHalf = 0
+    successfulPassesTeamBOpponentHalf = 0
+    successRateTeamAOwnHalf = 0
+    successRateTeamAOpponentHalf = 0
+    successRateTeamBOwnHalf = 0
+    successRateTeamBOpponentHalf = 0
     for event in match.getEvents():
         # check if the event is a pass
         if event.getTypeId() == '1' or event.getTypeId() == '2':
             # check new timeframe, then print current stats and reset them
             if event.getMinute() >= timeframeEnd and event.getMinute() > 0:
                 print(Fore.YELLOW + str(timeframeStart) + "-" + str(timeframeEnd) + ": ", end='')
-                print(Fore.WHITE + teamA.getName() + ": " + Fore.BLUE + str(
-                    passesTeamA) + " passes " + Fore.MAGENTA + "(", end='')
-                print("%.2f" % round(successRateTeamA, 2), end='')
+                print(Fore.WHITE + teamA.getName() + " Own Half: " + Fore.BLUE + str(
+                    passesTeamAOwnHalf) + " passes " + Fore.MAGENTA + "(", end='')
+                print("%.2f" % round(successRateTeamAOwnHalf, 2), end='')
                 print(") ", end='')
-                print(Fore.WHITE + teamB.getName() + ": " + Fore.BLUE + str(
-                    passesTeamB) + " passes " + Fore.MAGENTA + "(", end='')
-                print("%.2f" % round(successRateTeamB, 2), end='')
+                print(Fore.WHITE + teamA.getName() + " Opponent Half: " + Fore.BLUE + str(
+                    passesTeamAOpponentHalf) + " passes " + Fore.MAGENTA + "(", end='')
+                print("%.2f" % round(successRateTeamAOpponentHalf, 2), end='')
+                print(") ", end='')
+                print(Fore.WHITE + teamB.getName() + " Own Half: " + Fore.BLUE + str(
+                    passesTeamBOwnHalf) + " passes " + Fore.MAGENTA + "(", end='')
+                print("%.2f" % round(successRateTeamBOwnHalf, 2), end='')
                 print(")")
-                teamApasses.append(passesTeamA)
-                teamAsuccess.append(successfulPassesTeamA)
-                teamBpasses.append(passesTeamB)
-                teamBsuccess.append(successfulPassesTeamB)
+                print(Fore.WHITE + teamB.getName() + " Opponent Half: " + Fore.BLUE + str(
+                    passesTeamBOpponentHalf) + " passes " + Fore.MAGENTA + "(", end='')
+                print("%.2f" % round(successRateTeamBOpponentHalf, 2), end='')
+                print(")")
+                teamApassesOwnHalf.append(passesTeamAOwnHalf)
+                teamApassesOpponentHalf.append(passesTeamAOpponentHalf)
+                teamAsuccessOwnHalf.append(successfulPassesTeamAOwnHalf)
+                teamAsuccessOpponentHalf.append(successfulPassesTeamAOpponentHalf)
+                teamBpassesOwnHalf.append(passesTeamBOwnHalf)
+                teamBpassesOpponentHalf.append(passesTeamBOpponentHalf)
+                teamBsuccessOwnHalf.append(successfulPassesTeamBOwnHalf)
+                teamBsuccessOpponentHalf.append(successfulPassesTeamBOpponentHalf)
                 time.append(timeframeStart)
+                # Set new timeframe for counting
                 timeframeStart = timeframeStart + 5
                 timeframeEnd = timeframeEnd + 5
-                passesTeamA = 0
-                passesTeamB = 0
-                successfulPassesTeamA = 0
-                successfulPassesTeamB = 0
-                successRateTeamA = 0
-                successRateTeamB = 0
+                # Reset Counters
+                passesTeamAOwnHalf = 0
+                passesTeamAOpponentHalf = 0
+                passesTeamBOwnHalf = 0
+                passesTeamBOpponentHalf = 0
+                successfulPassesTeamAOwnHalf = 0
+                successfulPassesTeamAOpponentHalf = 0
+                successfulPassesTeamBOwnHalf = 0
+                successfulPassesTeamBOpponentHalf = 0
+                successRateTeamAOwnHalf = 0
+                successRateTeamAOpponentHalf = 0
+                successRateTeamBOwnHalf = 0
+                successRateTeamBOpponentHalf = 0
             # adjust team A
             if event.getTeamId() == teamA.getId():
                 # adjust total passes and successrate in this timeframe
-                if event.getOutcome() == '1':
-                    successfulPassesTeamA = successfulPassesTeamA + 1
-                passesTeamA = passesTeamA + 1
-                successRateTeamA = (successfulPassesTeamA / passesTeamA) * 100
+                if float(event.getXCoordinate()) <= 50.0: # own half
+                    if event.getOutcome() == '1':
+                        successfulPassesTeamAOwnHalf = successfulPassesTeamAOwnHalf + 1
+                    passesTeamAOwnHalf = passesTeamAOwnHalf + 1
+                    successRateTeamAOwnHalf = (successfulPassesTeamAOwnHalf / passesTeamAOwnHalf) * 100
+                else: # opponent half
+                    if event.getOutcome() == '1':
+                        successfulPassesTeamAOpponentHalf = successfulPassesTeamAOpponentHalf + 1
+                    passesTeamAOpponentHalf = passesTeamAOpponentHalf + 1
+                    successRateTeamAOpponentHalf = (successfulPassesTeamAOpponentHalf / passesTeamAOpponentHalf) * 100
             # adjust team B
             if event.getTeamId() == teamB.getId():
                 # adjust total passes and successrate in this timeframe
-                if event.getOutcome() == '1':
-                    successfulPassesTeamB = successfulPassesTeamB + 1
-                passesTeamB = passesTeamB + 1
-                successRateTeamB = (successfulPassesTeamB / passesTeamB) * 100
+                if float(event.getXCoordinate()) <= 50.0: # own half
+                    if event.getOutcome() == '1':
+                        successfulPassesTeamBOwnHalf = successfulPassesTeamBOwnHalf + 1
+                    passesTeamBOwnHalf = passesTeamBOwnHalf + 1
+                    successRateTeamBOwnHalf = (successfulPassesTeamBOwnHalf / passesTeamBOwnHalf) * 100
+                else: # opponent half
+                    if event.getOutcome() == '1':
+                        successfulPassesTeamBOpponentHalf = successfulPassesTeamBOpponentHalf + 1
+                    passesTeamBOpponentHalf = passesTeamBOpponentHalf + 1
+                    successRateTeamBOpponentHalf = (successfulPassesTeamBOpponentHalf / passesTeamBOpponentHalf) * 100
     time.append(timeframeStart)
-    teamApasses.append(passesTeamA)
-    teamAsuccess.append(successfulPassesTeamA)
-    teamBpasses.append(passesTeamB)
-    teamBsuccess.append(successfulPassesTeamB)
+    teamApassesOwnHalf.append(passesTeamAOwnHalf)
+    teamApassesOpponentHalf.append(passesTeamAOpponentHalf)
+    teamAsuccessOwnHalf.append(successfulPassesTeamAOwnHalf)
+    teamAsuccessOpponentHalf.append(successfulPassesTeamAOpponentHalf)
+    teamBpassesOwnHalf.append(passesTeamBOwnHalf)
+    teamBpassesOpponentHalf.append(passesTeamBOpponentHalf)
+    teamBsuccessOwnHalf.append(successfulPassesTeamBOwnHalf)
+    teamBsuccessOpponentHalf.append(successfulPassesTeamBOpponentHalf)
     print(Fore.YELLOW + str(timeframeStart) + "-" + str(timeframeEnd) + ": ", end='')
-    print(Fore.WHITE + teamA.getName() + ": " + Fore.BLUE + str(passesTeamA) + " passes " + Fore.MAGENTA + "(", end='')
-    print("%.2f" % round(successRateTeamA, 2), end='')
+    print(Fore.WHITE + teamA.getName() + " Own Half: " + Fore.BLUE + str(passesTeamAOwnHalf) + " passes " + Fore.MAGENTA + "(", end='')
+    print("%.2f" % round(successRateTeamAOwnHalf, 2), end='')
     print(") ", end='')
-    print(Fore.WHITE + teamB.getName() + ": " + Fore.BLUE + str(passesTeamB) + " passes " + Fore.MAGENTA + "(", end='')
-    print("%.2f" % round(successRateTeamB, 2), end='')
+    print(Fore.WHITE + teamA.getName() + " Opponent Half: " + Fore.BLUE + str(passesTeamAOpponentHalf) + " passes " + Fore.MAGENTA + "(", end='')
+    print("%.2f" % round(successRateTeamAOpponentHalf, 2), end='')
+    print(") ", end='')
+    print(Fore.WHITE + teamB.getName() + " Own Half: " + Fore.BLUE + str(passesTeamBOwnHalf) + " passes " + Fore.MAGENTA + "(", end='')
+    print("%.2f" % round(successRateTeamBOwnHalf, 2), end='')
+    print(")")
+    print(Fore.WHITE + teamB.getName() + " Opponent Half: " + Fore.BLUE + str(passesTeamBOpponentHalf) + " passes " + Fore.MAGENTA + "(", end='')
+    print("%.2f" % round(successRateTeamBOpponentHalf, 2), end='')
     print(")")
     time = [x + 2.5 for x in time]
 
-    plt.plot(time, teamApasses, label='Aantal passes', color='#21468B', linewidth=3)
-    plt.plot(time, teamAsuccess, label='Succesvolle passes', color='#21468B', linewidth=3, linestyle='dashed')
-    plt.fill_between(time, teamApasses, teamAsuccess, alpha=0.5, color='#21468B')
+    plt.plot(time, teamApassesOwnHalf, label='Aantal passes', color='#21468B', linewidth=3)
+    plt.plot(time, teamAsuccessOwnHalf, label='Succesvolle passes', color='#21468B', linewidth=3, linestyle='dashed')
+    plt.fill_between(time, teamApassesOwnHalf, teamAsuccessOwnHalf, alpha=0.5, color='#21468B')
     plt.xlabel('Tijd (minuten)')
     plt.ylabel('Aantal passes')
     plt.legend()
     plt.xticks(np.arange(0, max(time), 10))
     plt.grid()
-    plt.title(teamA.getName())
+    plt.title('Eigen Helft')
     plt.show()
 
-    plt.plot(time, teamBpasses, label='Aantal passes', color='#AE1C28', linewidth=3)
-    plt.plot(time, teamBsuccess, label='Succesvolle passes', color='#AE1C28', linewidth=3, linestyle='dashed')
-    plt.fill_between(time, teamBpasses, teamBsuccess, alpha=0.5, color='#AE1C28')
+    plt.plot(time, teamApassesOpponentHalf, label='Aantal passes', color='#21468B', linewidth=3)
+    plt.plot(time, teamAsuccessOpponentHalf, label='Succesvolle passes', color='#21468B', linewidth=3, linestyle='dashed')
+    plt.fill_between(time, teamApassesOpponentHalf, teamAsuccessOpponentHalf, alpha=0.5, color='#21468B')
     plt.xlabel('Tijd (minuten)')
     plt.ylabel('Aantal passes')
     plt.legend()
     plt.xticks(np.arange(0, max(time), 10))
     plt.grid()
-    plt.title(teamB.getName())
+    plt.title('Tegenstander Helft')
+    plt.show()
+
+    plt.plot(time, teamBpassesOwnHalf, label='Aantal passes', color='#AE1C28', linewidth=3)
+    plt.plot(time, teamBsuccessOwnHalf, label='Succesvolle passes', color='#AE1C28', linewidth=3, linestyle='dashed')
+    plt.fill_between(time, teamBpassesOwnHalf, teamBsuccessOwnHalf, alpha=0.5, color='#AE1C28')
+    plt.xlabel('Tijd (minuten)')
+    plt.ylabel('Aantal passes')
+    plt.legend()
+    plt.xticks(np.arange(0, max(time), 10))
+    plt.grid()
+    plt.title('Eigen Helft')
+    plt.show()
+
+    plt.plot(time, teamBpassesOpponentHalf, label='Aantal passes', color='#AE1C28', linewidth=3)
+    plt.plot(time, teamBsuccessOpponentHalf, label='Succesvolle passes', color='#AE1C28', linewidth=3, linestyle='dashed')
+    plt.fill_between(time, teamBpassesOpponentHalf, teamBsuccessOpponentHalf, alpha=0.5, color='#AE1C28')
+    plt.xlabel('Tijd (minuten)')
+    plt.ylabel('Aantal passes')
+    plt.legend()
+    plt.xticks(np.arange(0, max(time), 10))
+    plt.grid()
+    plt.title('Tegenstander Helft')
     plt.show()
 
 def __getAngle(xStart, xEnd, yStart, yEnd):
