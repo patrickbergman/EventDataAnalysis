@@ -143,7 +143,7 @@ def printTeamPassesTimeline(match):
     successRateTeamBOpponentHalf = 0
     for event in match.getEvents():
         # check if the event is a pass
-        if event.getTypeId() == '1' or event.getTypeId() == '2':
+        if (event.getTypeId() == '1' or event.getTypeId() == '2') and not event.hasQualifierByQualifierId(2) and not event.hasQualifierByQualifierId(107) and not event.hasQualifierByQualifierId(123):
             # check new timeframe, then print current stats and reset them
             if event.getMinute() >= timeframeEnd and event.getMinute() > 0:
                 print(Fore.YELLOW + str(timeframeStart) + "-" + str(timeframeEnd) + ": ", end='')
