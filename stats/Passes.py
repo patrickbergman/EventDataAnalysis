@@ -98,6 +98,11 @@ def printListPlayerPassers(match):
     for team in match.getTeams():
         teamPlayerPasses = []
         for player in team.getPlayers():
+            for event in match.getEvents():
+                # kijk of speler bij dit event hoort en dat event type 1 of 2 en niet Q (2,107,123)
+                # tellen en printen voordat je naar de volgende speler gaat
+
+
             passes = player.getEventsByTypeId(1)
             offsidePasses = player.getEventsByTypeId(2)
             totalPasses = passes + offsidePasses
