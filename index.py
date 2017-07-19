@@ -21,7 +21,7 @@ from stats.BallPossession import zonePossession
 from stats.BallPossession import createDataframe
 from stats.BallPossession import histogramPossession
 
-from stats.Duels import printDuels
+from stats.Duels import printDuelsTimeline
 
 init()
 
@@ -83,7 +83,7 @@ while program.run_program:
             dataframe, teamComposition = createDataframe(match)
         if choice == 'n':
             os.system('cls' if os.name == 'nt' else 'clear')
-            printDuels(match)
+            printDuelsTimeline(match)
 
     else:
         if choice == '1':
