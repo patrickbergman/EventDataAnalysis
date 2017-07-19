@@ -23,8 +23,8 @@ def __createDataFrame(match):
 
         # if event.hasPlayer():
         #    print(event.getPlayer().getFullName())
-        if (event.getTypeId() != '30' or event.getTypeId() != '32') and (
-            event.findQualifierByQualifierId('56') != None) and (
+        if (event.getTypeId() != 30 or event.getTypeId() != 32) and (
+            event.findQualifierByQualifierId(56) != None) and (
         event.hasPlayer()):  # Do not include events with start or end game as eventId
             timeline = timeline.append({
                 "id": event.getId(),
@@ -32,7 +32,7 @@ def __createDataFrame(match):
                 "minutes": int(event.getMinute()),
                 "seconds": int(event.getSecond()),
                 "totalSeconds": int(event.getMinute()) * 60 + int(event.getSecond()),
-                "zone": event.findQualifierByQualifierId('56').getValue(),
+                "zone": event.findQualifierByQualifierId(56).getValue(),
                 "timestamp": event.getTimestamp(),
                 "player": event.getPlayer().getFullName()
             }, ignore_index=True)
@@ -206,22 +206,23 @@ def histogramPossession(match, dataFrame, teamComposition):
     ind = np.arange(N)  # the x locations for the groups
     width = 0.35  # the width of the bars
     ax = plt.gca()
-
+    # 21468B
     fig, ax = plt.subplots()
-    rects1 = ax.bar(ind, teamA, width, color='#bf3922')
+    rects1 = ax.bar(ind, teamA, width, color='#21468B')
 
-    rects2 = ax.bar(ind + width, teamB, width, color='#193153')
+    #    rects2 = ax.bar(ind, teamB, width, color='#AE1C28')
 
     # add some text for labels, title and axes ticks
-    ax.set_ylabel('Balbezit in %')
-    ax.set_xticks(ind + width / 2)
-    ax.set_xlabel('Tijd in secondes')
+    ax.set_ylabel('Frequentie (%)')
+    ax.set_xticks(ind)
+    plt.ylim(0, 50)
+    ax.set_xlabel('Tijd (secondes)')
     ax.set_xticklabels(('0-5', '5-10', '10-15', '15-20', '20+'))
 
     # ax.legend((rects1[0], rects2[0]), (match.findTeamById(teamComposition[0]).getName(), match.findTeamById(teamComposition[1]).getName()))
 
     autolabel(rects1)
-    autolabel(rects2)
+    #    autolabel(rects2)
 
     plt.show()
 
@@ -238,3 +239,5 @@ def autolabel(rects):
         ax.text(rect.get_x() + rect.get_width() / 2., 1 * height,
                 '%1.1f' % round(height, 2),
                 ha='center', va='bottom')
+
+

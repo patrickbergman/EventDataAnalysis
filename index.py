@@ -4,15 +4,23 @@ from core.classes.Match import Match
 from core.colorama import init, Fore
 from core.menus.MainMenu import MainMenu
 from core.menus.XMLImportMenu import XMLImportMenu
+
 from stats.Passes import printListPlayerPassers
 from stats.Passes import printTopPassers
 from stats.Passes import printTotalTeamPasses
 from stats.Passes import printTeamPassesTimeline
 from stats.Passes import getAnglesForPasses
+
 from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
+
 from stats.BallPossession import percentagePossession
 from stats.BallPossession import intervalPossession
+from stats.BallPossession import bestPlayerPossession
+from stats.BallPossession import zonePossession
+from stats.BallPossession import createDataframe
+from stats.BallPossession import histogramPossession
+
 from stats.Duels import printDuels
 
 init()
@@ -54,19 +62,28 @@ while program.run_program:
             printListPlayerPassers(match)
         if choice == 'g':
             os.system('cls' if os.name == 'nt' else 'clear')
-            percentagePossession(match)
+            getAnglesForPasses(match)
         if choice == 'h':
             os.system('cls' if os.name == 'nt' else 'clear')
-            intervalPossession(match)
+            percentagePossession(match, dataframe, teamComposition)
         if choice == 'i':
             os.system('cls' if os.name == 'nt' else 'clear')
-            intervalPossession(match)
+            intervalPossession(match, dataframe, teamComposition)
         if choice == 'j':
             os.system('cls' if os.name == 'nt' else 'clear')
-            printDuels(match)
+            zonePossession(match, dataframe, teamComposition)
         if choice == 'k':
             os.system('cls' if os.name == 'nt' else 'clear')
-            getAnglesForPasses(match)
+            bestPlayerPossession(match, dataframe, teamComposition)
+        if choice == 'l':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            histogramPossession(match, dataframe, teamComposition)
+        if choice == 'm':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            dataframe, teamComposition = createDataframe(match)
+        if choice == 'n':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            printDuels(match)
 
     else:
         if choice == '1':
