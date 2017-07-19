@@ -2,9 +2,13 @@ from core.colorama import init, Fore
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import pylab
 
 init()
 
+
+def roundup(x):
+    return int(round(x / 10.0)) * 10
 
 # Calls the initialized functions, to create dataframe and make array team composition
 def createDataframe(match):
@@ -205,24 +209,30 @@ def histogramPossession(match, dataFrame, teamComposition):
 
     ind = np.arange(N)  # the x locations for the groups
     width = 0.35  # the width of the bars
-    ax = plt.gca()
-    # 21468B
     fig, ax = plt.subplots()
-    rects1 = ax.bar(ind, teamA, width, color='#21468B')
-
-    #    rects2 = ax.bar(ind, teamB, width, color='#AE1C28')
+    rects1 = plt.bar(ind, teamA, width, color='#21468B')
 
     # add some text for labels, title and axes ticks
     ax.set_ylabel('Frequentie (%)')
     ax.set_xticks(ind)
-    plt.ylim(0, 50)
+    pylab.ylim([0,roundup(max(teamA))+10])
     ax.set_xlabel('Tijd (secondes)')
     ax.set_xticklabels(('0-5', '5-10', '10-15', '15-20', '20+'))
 
-    # ax.legend((rects1[0], rects2[0]), (match.findTeamById(teamComposition[0]).getName(), match.findTeamById(teamComposition[1]).getName()))
-
     autolabel(rects1)
-    #    autolabel(rects2)
+
+    plt.show()
+
+    rects2 = plt.bar(ind, teamB, width, color='#AE1C28')
+
+    # add some text for labels, title and axes ticks
+    ax.set_ylabel('Frequentie (%)')
+    ax.set_xticks(ind)
+    pylab.ylim([0,roundup(max(teamB))+10])
+    ax.set_xlabel('Tijd (secondes)')
+    ax.set_xticklabels(('0-5', '5-10', '10-15', '15-20', '20+'))
+
+    autolabel(rects2)
 
     plt.show()
 

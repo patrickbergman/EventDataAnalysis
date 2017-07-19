@@ -11,6 +11,8 @@ from stats.Passes import printTotalTeamPasses
 from stats.Passes import printTeamPassesTimeline
 from stats.Passes import getAnglesForPasses
 
+from stats.Angles import plotAngles
+
 from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
 
@@ -62,7 +64,7 @@ while program.run_program:
             printListPlayerPassers(match)
         if choice == 'g':
             os.system('cls' if os.name == 'nt' else 'clear')
-            getAnglesForPasses(match)
+            plotAngles(match)
         if choice == 'h':
             os.system('cls' if os.name == 'nt' else 'clear')
             percentagePossession(match, dataframe, teamComposition)
