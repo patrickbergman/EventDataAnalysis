@@ -57,18 +57,17 @@ def __printTeamPassers(playersArray):
 def printTotalTeamPasses(match):
     for team in match.getTeams():
         successFullPasses = 0
-        passes = team.getEventsByTypeId(1)
-        offsidePasses = team.getEventsByTypeId(2)
-        totalPasses = passes + offsidePasses
-
-        for playerPassEvent in totalPasses:
-            if playerPassEvent.getOutcome() == '1':
-                successFullPasses = successFullPasses + 1
-        passesPercentage = (successFullPasses / len(totalPasses)) * 100
+        passes = 0
+        for event in match.getEvents():
+            if event.getTeamId() == team.getId() and event.getTypeId() == '1' and not event.hasQualifierByQualifierId(2) and not event.hasQualifierByQualifierId(107) and not event.hasQualifierByQualifierId(123):
+                passes = passes + 1
+                if event.getOutcome() == '1':
+                    successFullPasses = successFullPasses + 1
+        passesPercentage = (successFullPasses / passes) * 100
         print(Fore.YELLOW, end='')
         print(team.getName(), end='')
         print(Fore.WHITE, end='')
-        print(": " + str(len(totalPasses)) + " passes (", end='')
+        print(": " + str(passes) + " passes (", end='')
         print("%.2f" % round(passesPercentage, 2), end='')
         print("% successfull)")
 
@@ -77,17 +76,18 @@ def printTopPassers(match):
     for team in match.getTeams():
         teamPlayerPasses = []
         for player in team.getPlayers():
-            passes = player.getEventsByTypeId(1)
-            offsidePasses = player.getEventsByTypeId(2)
-            totalPasses = passes + offsidePasses
+            passes = 0
             successFullPasses = 0
-            for playerPassEvent in totalPasses:
-                if playerPassEvent.getOutcome() == '1':
-                    successFullPasses = successFullPasses + 1
-            successRate = (successFullPasses / len(totalPasses)) * 100 if len(totalPasses) > 0 else 0
+            for event in match.getEvents():
+                if event.getPlayerId() == player.getId() and event.getTypeId() == '1' and not event.hasQualifierByQualifierId(2) and not event.hasQualifierByQualifierId(107) and not event.hasQualifierByQualifierId(123):
+                    passes = passes + 1
+                    if event.getOutcome() == '1':
+                        successFullPasses = successFullPasses + 1
+
+            successRate = (successFullPasses / passes) * 100 if passes > 0 else 0
             teamPlayerPasses.append([
                 player,
-                len(totalPasses),
+                passes,
                 successRate
             ])
         print(Fore.YELLOW + "Team " + team.getName() + ":" + Fore.WHITE)
@@ -98,22 +98,18 @@ def printListPlayerPassers(match):
     for team in match.getTeams():
         teamPlayerPasses = []
         for player in team.getPlayers():
-            for event in match.getEvents():
-                # kijk of speler bij dit event hoort en dat event type 1 of 2 en niet Q (2,107,123)
-                # tellen en printen voordat je naar de volgende speler gaat
-
-
-            passes = player.getEventsByTypeId(1)
-            offsidePasses = player.getEventsByTypeId(2)
-            totalPasses = passes + offsidePasses
+            passes = 0
             successFullPasses = 0
-            for playerPassEvent in totalPasses:
-                if playerPassEvent.getOutcome() == '1':
-                    successFullPasses = successFullPasses + 1
-            successRate = (successFullPasses / len(totalPasses)) * 100 if len(totalPasses) > 0 else 0
+            for event in match.getEvents():
+                if event.getPlayerId() == player.getId() and event.getTypeId() == '1' and not event.hasQualifierByQualifierId(2) and not event.hasQualifierByQualifierId(107) and not event.hasQualifierByQualifierId(123):
+                    passes = passes + 1
+                    if event.getOutcome() == '1':
+                        successFullPasses = successFullPasses + 1
+
+            successRate = (successFullPasses / passes) * 100 if passes > 0 else 0
             teamPlayerPasses.append([
                 player,
-                len(totalPasses),
+                passes,
                 successRate
             ])
         print(Fore.YELLOW + "Team " + team.getName() + ":" + Fore.WHITE)
@@ -249,9 +245,9 @@ def printTeamPassesTimeline(match):
     plt.xlabel('Tijd (minuten)')
     plt.ylabel('Aantal passes')
     plt.legend()
+    plt.ylim(0,30)
     plt.xticks(np.arange(0, max(time), 10))
-    plt.grid()
-    plt.title('Eigen Helft')
+    plt.title('Eigen Helft', y=1.03)
     plt.show()
 
     plt.plot(time, teamApassesOpponentHalf, label='Aantal passes', color='#21468B', linewidth=3)
@@ -260,9 +256,9 @@ def printTeamPassesTimeline(match):
     plt.xlabel('Tijd (minuten)')
     plt.ylabel('Aantal passes')
     plt.legend()
+    plt.ylim(0,30)
     plt.xticks(np.arange(0, max(time), 10))
-    plt.grid()
-    plt.title('Tegenstander Helft')
+    plt.title('Helft Tegenstander', y=1.03)
     plt.show()
 
     plt.plot(time, teamBpassesOwnHalf, label='Aantal passes', color='#AE1C28', linewidth=3)
@@ -271,9 +267,9 @@ def printTeamPassesTimeline(match):
     plt.xlabel('Tijd (minuten)')
     plt.ylabel('Aantal passes')
     plt.legend()
+    plt.ylim(0,30)
     plt.xticks(np.arange(0, max(time), 10))
-    plt.grid()
-    plt.title('Eigen Helft')
+    plt.title('Eigen Helft', y=1.03)
     plt.show()
 
     plt.plot(time, teamBpassesOpponentHalf, label='Aantal passes', color='#AE1C28', linewidth=3)
@@ -282,9 +278,9 @@ def printTeamPassesTimeline(match):
     plt.xlabel('Tijd (minuten)')
     plt.ylabel('Aantal passes')
     plt.legend()
+    plt.ylim(0,30)
     plt.xticks(np.arange(0, max(time), 10))
-    plt.grid()
-    plt.title('Tegenstander Helft')
+    plt.title('Helft Tegenstander', y=1.03)
     plt.show()
 
 def __getAngle(xStart, xEnd, yStart, yEnd):
