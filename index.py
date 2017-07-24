@@ -25,6 +25,8 @@ from stats.BallPossession import histogramPossession
 
 from stats.Duels import printDuelsTimeline
 
+from stats.Throwins import printThrowins
+
 init()
 
 TESTING = True
@@ -86,7 +88,9 @@ while program.run_program:
         if choice == 'n':
             os.system('cls' if os.name == 'nt' else 'clear')
             printDuelsTimeline(match)
-
+        if choice == 'o':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            printThrowins(match)
     else:
         if choice == '1':
             match = xmlMenu.run(match)
