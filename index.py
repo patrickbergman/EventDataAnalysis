@@ -27,6 +27,8 @@ from stats.BallPossession import histogramPossession
 
 from stats.Duels import printDuelsTimeline
 
+from stats.DuelsMultiple import printDuelsTimelineMultiple
+
 from stats.Throwins import printThrowins
 
 init()
@@ -55,6 +57,9 @@ while program.run_program:
             if choice == 'b':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 printOpposingTeams(match)
+            if choice == 'c':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printDuelsTimelineMultiple(match)
         else:
             if choice == 'a':
                 os.system('cls' if os.name == 'nt' else 'clear')
