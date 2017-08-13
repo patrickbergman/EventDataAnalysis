@@ -15,6 +15,8 @@ from stats.Angles import plotAngles
 
 from stats.TestFunctions import printAllPlayers
 from stats.TestFunctions import printAllTeams
+from stats.TestFunctions import printSingleTeam
+from stats.TestFunctions import printOpposingTeams
 
 from stats.BallPossession import percentagePossession
 from stats.BallPossession import intervalPossession
@@ -46,52 +48,65 @@ while program.run_program:
     if choice == 'z' or choice == 'Z':
         os.system('cls' if os.name == 'nt' else 'clear')
     if program.xml_is_imported:
-        if choice == 'a':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printAllTeams(match)
-        if choice == 'b':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printAllPlayers(match)
-        if choice == 'c':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printTotalTeamPasses(match)
-        if choice == 'd':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printTeamPassesTimeline(match)
-        if choice == 'e':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printTopPassers(match)
-        if choice == 'f':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printListPlayerPassers(match)
-        if choice == 'g':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            plotAngles(match)
-        if choice == 'h':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            percentagePossession(match, dataframe, teamComposition)
-        if choice == 'i':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            intervalPossession(match, dataframe, teamComposition)
-        if choice == 'j':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            zonePossession(match, dataframe, teamComposition)
-        if choice == 'k':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            bestPlayerPossession(match, dataframe, teamComposition)
-        if choice == 'l':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            histogramPossession(match, dataframe, teamComposition)
-        if choice == 'm':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            dataframe, teamComposition = createDataframe(match)
-        if choice == 'n':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printDuelsTimeline(match)
-        if choice == 'o':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            printThrowins(match)
+        if program.multiple:
+            if choice == 'a':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printSingleTeam(match)
+            if choice == 'b':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printOpposingTeams(match)
+        else:
+            if choice == 'a':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printAllTeams(match)
+            if choice == 'b':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printAllPlayers(match)
+            if choice == 'c':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printTotalTeamPasses(match)
+            if choice == 'd':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printTeamPassesTimeline(match)
+            if choice == 'e':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printTopPassers(match)
+            if choice == 'f':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printListPlayerPassers(match)
+            if choice == 'g':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                plotAngles(match)
+            if choice == 'h':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                percentagePossession(match, dataframe, teamComposition)
+            if choice == 'i':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                intervalPossession(match, dataframe, teamComposition)
+            if choice == 'j':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                zonePossession(match, dataframe, teamComposition)
+            if choice == 'k':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                bestPlayerPossession(match, dataframe, teamComposition)
+            if choice == 'l':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                histogramPossession(match, dataframe, teamComposition)
+            if choice == 'm':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                dataframe, teamComposition = createDataframe(match)
+            if choice == 'n':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printDuelsTimeline(match)
+            if choice == 'o':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printThrowins(match)
     else:
         if choice == '1':
             match = xmlMenu.run(match)
             program.xml_is_imported = True
+        if choice == '2':
+            xmlMenu.multiple = True
+            program.multiple = True
+            match = xmlMenu.run(match)
+            program.xml_is_imported = True    

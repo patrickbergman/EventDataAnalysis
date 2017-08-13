@@ -5,13 +5,17 @@ class MainMenu:
 
     run_program = True
     xml_is_imported = False
+    multiple = False
 
     def showMenu(self):
         self.__showMakerText()
         print('+-------------------------------------+')
         print('| What would you like to do?          |')
         if self.xml_is_imported:
-            self.__showMainMenu()
+            if self.multiple:
+                self.__showMainMenuMultiple()
+            else:
+                self.__showMainMenu()
         else:
             self.__showImportMenu()
         print('+-------------------------------------+')
@@ -61,8 +65,21 @@ class MainMenu:
         print('| Z) Clear screen                     |')
         print('| X) Exit program                     |')
 
+    def __showMainMenuMultiple(self):
+        print('+--------- General -------------------+')
+        print('|                                     |')
+        print('| a) Show common team                 |')
+        print('| b) Show opposing teams              |')
+        print('|                                     |')
+        print('+--------- System --------------------+')
+        print('|                                     |')
+        print('| Z) Clear screen                     |')
+        print('| X) Exit program                     |')
+
     def __showImportMenu(self):
         print('| 1) Import event and match XML       |')
+        print('| 2) Import multiple event and match  |')
+        print('|    XML                              |')
         print('|                                     |')
         print('| Z) Clear screen                     |')
         print('| X) Exit program                     |')

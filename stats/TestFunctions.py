@@ -16,3 +16,12 @@ def printAllPlayers(match):
         print(Fore.WHITE, end='')
         print(player.getFullName() + Fore.BLUE + ' (' + match.findTeamById(player.getTeamId()).getName() + ')' + Fore.WHITE)
 
+def printSingleTeam(matchList):
+    print(matchList[1].findTeamById(matchList[0]).getName())
+
+def printOpposingTeams(matchList):
+    for match in matchList[1:]:
+        for team in match.getTeams():
+            if team.getId() != matchList[0]:
+                print(team.getName())
+
