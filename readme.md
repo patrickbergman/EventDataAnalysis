@@ -27,6 +27,10 @@ if choice == 'menuOption':
 ```
 5) from the 'match' variable you can get all the data you need
 
+## Importing multiple matches
+To import multiple matches, make sure that every match has its own folder in './data'. 
+Each folder needs to contain a 'match.xml' and a 'events.xml'.
+
 ## Object functionalities
 Beneath you will find the functions a match, team or player has. Although the classes contain more function,
 the function prepended with a single underscore (_function) are use by the importer to set data.
