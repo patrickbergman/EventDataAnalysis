@@ -11,6 +11,12 @@ from stats.Passes import printTotalTeamPasses
 from stats.Passes import printTeamPassesTimeline
 from stats.Passes import getAnglesForPasses
 
+from stats.PassesMultiple import printListPlayerPassersMultiple
+from stats.PassesMultiple import printTopPassersMultiple
+from stats.PassesMultiple import printTotalTeamPassesMultiple
+from stats.PassesMultiple import printTeamPassesTimelineMultiple
+from stats.PassesMultiple import getAnglesForPassesMultiple
+
 from stats.Angles import plotAngles
 
 from stats.TestFunctions import printAllPlayers
@@ -65,6 +71,18 @@ while program.run_program:
             if choice == 'd':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 printThrowinsMultiple(match)
+            if choice == 'e':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printTotalTeamPassesMultiple(match)
+            if choice == 'f':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printTeamPassesTimelineMultiple(match)
+            if choice == 'g':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printTopPassersMultiple(match)
+            if choice == 'h':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printListPlayerPassersMultiple(match)
         else:
             if choice == 'a':
                 os.system('cls' if os.name == 'nt' else 'clear')
