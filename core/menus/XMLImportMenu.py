@@ -35,7 +35,7 @@ class XMLImportMenu:
     def __importMultiple(self):
         matchList = [""]
         iterator = 1
-        basepath = "./data/"
+        basepath = os.path.abspath("data")
         for entry in os.listdir(basepath):
             path = os.path.join(basepath, entry)
             if os.path.isdir(path):

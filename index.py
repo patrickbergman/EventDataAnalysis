@@ -26,6 +26,7 @@ from stats.BallPossession import createDataframe
 from stats.BallPossession import histogramPossession
 
 from stats.Duels import printDuelsTimeline
+from stats.Duels import plotAerialStats
 
 from stats.DuelsMultiple import printDuelsTimelineMultiple
 
@@ -87,22 +88,22 @@ while program.run_program:
                 percentagePossession(match, dataframe, teamComposition)
             if choice == 'i':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                intervalPossession(match, dataframe, teamComposition)
+                zonePossession(match, dataframe, teamComposition)
             if choice == 'j':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                zonePossession(match, dataframe, teamComposition)
+                bestPlayerPossession(match, dataframe, teamComposition)
             if choice == 'k':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                bestPlayerPossession(match, dataframe, teamComposition)
+                histogramPossession(match, dataframe, teamComposition)
             if choice == 'l':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                histogramPossession(match, dataframe, teamComposition)
+                dataframe, teamComposition = createDataframe(match)
             if choice == 'm':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                dataframe, teamComposition = createDataframe(match)
+                printDuelsTimeline(match)
             if choice == 'n':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                printDuelsTimeline(match)
+                plotAerialStats(match)
             if choice == 'o':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 printThrowins(match)

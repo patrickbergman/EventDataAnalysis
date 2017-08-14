@@ -46,7 +46,8 @@ def getStats(throwins):
 def printThrowins(match):
     a = match.getTeams()[0]
     b = match.getTeams()[1]
-
+    print(match.getTeams()[0].getName() + ":" + "blue")
+    print(match.getTeams()[1].getName() + ":" + "red")
     throwinsA = a.findEventsByQualifierId(107)
     throwinsB = b.findEventsByQualifierId(107)
 
@@ -56,7 +57,7 @@ def printThrowins(match):
 
     backwardRange = max(backwardWinA) + max(backwardLoseA)
     forwardRange = max(forwardWinA) + max(forwardLoseA)
-    xRange = range(0, max([backwardRange,forwardRange]) + 1, 1)
+    xRange = range(0, max([backwardRange,forwardRange]) + 1, 2)
 
     yticks = ['0 - 25', '25 - 50', '50 - 75', '75 - 100']
     metres = [0,20,40,60]
@@ -69,7 +70,7 @@ def printThrowins(match):
     ax1.barh(metres, backwardLoseA, width, left=backwardWinA, label='Afgestaan', color='#21468B', alpha=0.5)
     ax1.set_xticks(xRange)
     ax1.set_title('Achteruit', y=1.03)
-    ax1.set_xlabel('Aantal ingooien', ha='center', y=0.95)
+    ax1.set_xlabel('Aantal inworpen', ha='center', y=0.95)
     ax1.legend()
     ax1.invert_xaxis()
     ax1.tick_params(axis=u'y', which=u'both', length=0)
@@ -83,7 +84,7 @@ def printThrowins(match):
     ax2.yaxis.set_label_coords(-0.19, 1.02)
     ax2.set_ylabel('Locatie (m)', ha='center', rotation=0, y=1.03)
     ax2.set_title('Vooruit', y=1.03)
-    ax2.set_xlabel('Aantal ingooien', ha='center', y=0.95)
+    ax2.set_xlabel('Aantal inworpen', ha='center', y=0.95)
     ax2.tick_params(axis=u'y', which=u'both', length=0)
     plt.setp(ax2.get_yticklabels(), visible=True)
     f.subplots_adjust(wspace=0.4)
@@ -91,14 +92,14 @@ def printThrowins(match):
 
     backwardRange = max(backwardWinB) + max(backwardLoseB)
     forwardRange = max(forwardWinB) + max(forwardLoseB)
-    xRange = range(0, max([backwardRange,forwardRange]) + 1, 1)
+    xRange = range(0, max([backwardRange,forwardRange]) + 1, 2)
 
     g, (ax3, ax4) = plt.subplots(1, 2, sharey=True)
     ax3.barh(metres, backwardWinB, width, label='Behouden', color='#AE1C28')
     ax3.barh(metres, backwardLoseB, width, left=backwardWinB, label='Afgestaan', color='#AE1C28', alpha=0.5)
     ax3.set_xticks(xRange)
     ax3.set_title('Achteruit', y=1.03)
-    ax3.set_xlabel('Aantal ingooien', ha='center', y=0.95)
+    ax3.set_xlabel('Aantal inworpen', ha='center', y=0.95)
     ax3.legend()
     ax3.invert_xaxis()
     ax3.tick_params(axis=u'y', which=u'both', length=0)
@@ -112,7 +113,7 @@ def printThrowins(match):
     ax4.yaxis.set_label_coords(-0.19, 1.02)
     ax4.set_ylabel('Locatie (m)', ha='center', rotation=0, y=1.03)
     ax4.set_title('Vooruit', y=1.03)
-    ax4.set_xlabel('Aantal ingooien', ha='center', y=0.95)
+    ax4.set_xlabel('Aantal inworpen', ha='center', y=0.95)
     ax4.tick_params(axis=u'y', which=u'both', length=0)
     plt.setp(ax4.get_yticklabels(), visible=True)
     g.subplots_adjust(wspace=0.4)
