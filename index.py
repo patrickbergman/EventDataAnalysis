@@ -31,6 +31,7 @@ from stats.Duels import plotAerialStats
 from stats.DuelsMultiple import printDuelsTimelineMultiple
 
 from stats.Throwins import printThrowins
+from stats.ThrowinsMultiple import printThrowinsMultiple
 
 init()
 
@@ -61,6 +62,9 @@ while program.run_program:
             if choice == 'c':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 printDuelsTimelineMultiple(match)
+            if choice == 'd':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printThrowinsMultiple(match)
         else:
             if choice == 'a':
                 os.system('cls' if os.name == 'nt' else 'clear')

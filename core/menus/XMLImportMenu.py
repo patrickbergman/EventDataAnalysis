@@ -55,7 +55,7 @@ class XMLImportMenu:
         return matchList
 
     def __importMultipleMatchData(self, match, initPath):
-        path = initPath + "/match.xml"
+        path = os.path.join(initPath, 'match.xml')
         matchImporter = MatchXMLImporter(path)
         print('Adding teams to the match... ', '')
         for team in matchImporter.getTeamElements():
@@ -69,7 +69,7 @@ class XMLImportMenu:
         return match
 
     def __importMultipleEventData(self, match, initPath):
-        path = initPath + "/events.xml"
+        path = os.path.join(initPath, 'events.xml')
         eventImporter = EventXMLImporter(path, match)
         print(Fore.WHITE + 'Adding events to the match, teams and players... ', '')
         for event in eventImporter.getEvents(match):
