@@ -43,7 +43,7 @@ class XMLImportMenu:
                 match = self.__importMultipleMatchData(match, path)
                 match = self.__importMultipleEventData(match, path)
                 matchList.append(match)
-
+        
         # find common team and put on matchList[0]
         teamlist1 = matchList[1].getTeams()
         teamlist2 = matchList[2].getTeams()

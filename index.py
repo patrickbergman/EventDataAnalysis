@@ -35,6 +35,7 @@ from stats.Duels import printDuelsTimeline
 from stats.Duels import plotAerialStats
 
 from stats.DuelsMultiple import printDuelsTimelineMultiple
+from stats.DuelsMultiple import plotAerialStatsMultiple
 
 from stats.Throwins import printThrowins
 from stats.ThrowinsMultiple import printThrowinsMultiple
@@ -70,17 +71,20 @@ while program.run_program:
                 printDuelsTimelineMultiple(match)
             if choice == 'd':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                printThrowinsMultiple(match)
+                plotAerialStatsMultiple(match)
             if choice == 'e':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                printTotalTeamPassesMultiple(match)
+                printThrowinsMultiple(match)
             if choice == 'f':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                printTeamPassesTimelineMultiple(match)
+                printTotalTeamPassesMultiple(match)
             if choice == 'g':
                 os.system('cls' if os.name == 'nt' else 'clear')
-                printTopPassersMultiple(match)
+                printTeamPassesTimelineMultiple(match)
             if choice == 'h':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                printTopPassersMultiple(match)
+            if choice == 'i':
                 os.system('cls' if os.name == 'nt' else 'clear')
                 printListPlayerPassersMultiple(match)
         else:

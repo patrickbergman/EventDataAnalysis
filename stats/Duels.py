@@ -628,6 +628,7 @@ def getAerialStats(match, a, b):
     wonAerialLostBallBTotalSecond.append(wonAerialLostBallBSecond)
     wonAerialLostBallBTotalET.append(wonAerialLostBallBET)
     wonAerialLostBallBTotal.append(wonAerialLostBallBFirst + wonAerialLostBallBSecond + wonAerialLostBallBET)
+    print(time)
     return wonAerialKeepBallATotalFirst, wonAerialKeepBallATotalSecond, wonAerialKeepBallATotalET, wonAerialKeepBallATotal, wonAerialKeepBallBTotalFirst, wonAerialKeepBallBTotalSecond, wonAerialKeepBallBTotalET, wonAerialKeepBallBTotal, wonAerialLostBallATotalFirst, wonAerialLostBallATotalSecond, wonAerialLostBallATotalET, wonAerialLostBallATotal, wonAerialLostBallBTotalFirst, wonAerialLostBallBTotalSecond, wonAerialLostBallBTotalET, wonAerialLostBallBTotal, zoneAWon, zoneBWon, time, timeInterval
 
 def plotAerialStats(match):
